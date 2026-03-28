@@ -1,132 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-
 * {
   box-sizing: border-box;
-  font-family: 'JetBrains Mono', monospace;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  background: #e8e8ed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
 
-body { min-width: 300px; }
-
-/* ── 프로필 섹션 ── */
+/* ── 카드 래퍼 ── */
 .container {
   width: 100%;
-  height: 100vh;
-  background-color: #0d1117;
+  max-width: 440px;
 }
 
 .profile {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 36px 28px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
-  text-align: center;
-  min-height: 460px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 16px 48px rgba(0, 0, 0, 0.12);
 }
 
+/* ── 프로필 사진 ── */
 .profile_pic {
-  width: 100px;
-  height: 100px;
+  width: 88px;
+  height: 88px;
   background-image: url(jh.jpg);
   background-size: cover;
   background-position: center;
-  border: 1px solid #00ff41;
-  border-radius: 4px;
-  filter: grayscale(30%) brightness(0.85);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.14);
+  margin-bottom: 14px;
 }
 
+/* ── 이름 / 닉네임 ── */
 .profile_name {
-  color: #00ff41;
-  margin-top: 20px;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
-}
-
-.cursor {
-  display: inline-block;
-  width: 10px;
-  height: 18px;
-  background: #00ff41;
-  vertical-align: middle;
-  margin-left: 6px;
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
+  color: #1c1c1e;
+  letter-spacing: -0.5px;
 }
 
 .profile_nick {
-  color: rgba(0, 255, 65, 0.5);
-  font-size: 16px;
-  margin-top: 8px;
-}
-
-.prompt {
-  color: rgba(0, 255, 65, 0.4);
+  font-size: 13px;
+  color: #8e8e93;
+  margin-top: 4px;
 }
 
 /* ── 이메일 ── */
 .email-link {
-  color: rgba(0, 255, 65, 0.5);
-  font-size: 14px;
+  font-size: 13px;
+  color: #007aff;
   text-decoration: none;
-  margin-top: 16px;
-  letter-spacing: 0.5px;
-  transition: color 0.2s;
+  margin-top: 8px;
+  transition: opacity 0.15s;
+}
+.email-link:hover { opacity: 0.7; }
+
+/* ── 구분선 ── */
+.divider {
+  width: 100%;
+  height: 0.5px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 20px 0;
 }
 
-.email-link:hover {
-  color: #00ff41;
+/* ── 섹션 라벨 ── */
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8e8e93;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-bottom: 12px;
 }
 
-/* ── 버튼 ── */
+/* ── 프로젝트 버튼 ── */
 .travel-btn {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-top: 24px;
-  padding: 12px 20px;
-  background: transparent;
-  border: 1px solid rgba(0, 255, 65, 0.35);
-  border-radius: 4px;
-  text-decoration: none;
-  color: #00ff41;
-  transition: all 0.2s ease;
-  max-width: 440px;
+  gap: 12px;
   width: 100%;
+  padding: 11px 13px;
+  background: rgba(118, 118, 128, 0.08);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #1c1c1e;
+  margin-bottom: 8px;
+  transition: background 0.15s;
 }
+.travel-btn:last-of-type { margin-bottom: 0; }
+.travel-btn:hover { background: rgba(118, 118, 128, 0.15); }
 
-.travel-btn:hover {
-  background: rgba(0, 255, 65, 0.07);
-  border-color: #00ff41;
-  box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
-}
-
-.travel-btn-arrow {
-  font-size: 14px;
+.travel-btn-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
   flex-shrink: 0;
-  color: #00ff41;
 }
+.ic-blue   { background: linear-gradient(145deg, #34aadc, #007aff); }
+.ic-green  { background: linear-gradient(145deg, #4cd964, #34c759); }
+.ic-purple { background: linear-gradient(145deg, #c084fc, #7c3aed); }
 
 .travel-btn-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  gap: 3px;
+  flex: 1;
 }
 
 .travel-btn-label {
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1c1c1e;
 }
 
 .travel-btn-sub {
-  font-size: 12px;
-  color: rgba(0, 255, 65, 0.4);
+  font-size: 11px;
+  color: #8e8e93;
+}
+
+.travel-btn-chevron {
+  font-size: 18px;
+  color: #c7c7cc;
+  line-height: 1;
 }
 
 /* ── 바로가기 아이콘 ── */
@@ -135,79 +152,61 @@ body { min-width: 300px; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px 20px;
-  margin-top: 36px;
-  max-width: 480px;
 }
 
 .shortcut {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   text-decoration: none;
-  width: 88px;
 }
 
 .shortcut-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(0, 255, 65, 0.06);
-  border: 1px solid rgba(0, 255, 65, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
   overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+.shortcut:hover .shortcut-icon {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16), 0 0 0 0.5px rgba(0, 0, 0, 0.08);
 }
 
 .shortcut-icon img {
-  width: 36px;
-  height: 36px;
-}
-
-.shortcut:hover .shortcut-icon {
-  background: rgba(0, 255, 65, 0.12);
-  border-color: #00ff41;
-  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+  width: 34px;
+  height: 34px;
 }
 
 .shortcut-label {
-  font-size: 13px;
-  color: rgba(0, 255, 65, 0.5);
-  text-align: center;
-  word-break: keep-all;
-  width: 100%;
-  transition: color 0.2s;
-}
-
-.shortcut:hover .shortcut-label {
-  color: #00ff41;
+  font-size: 11px;
+  color: #8e8e93;
 }
 
 /* ── 방문자 카운터 ── */
 .visitor-counter {
-  margin-top: 28px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  opacity: 0.45;
+  gap: 6px;
+  opacity: 0.5;
   transition: opacity 0.2s;
 }
-
-.visitor-counter:hover {
-  opacity: 0.9;
-}
+.visitor-counter:hover { opacity: 1; }
 
 .visitor-label {
-  font-size: 12px;
-  color: rgba(0, 255, 65, 0.7);
-  letter-spacing: 1px;
+  font-size: 11px;
+  color: #8e8e93;
+  letter-spacing: 0.5px;
 }
 
 .visitor-count {
-  font-size: 13px;
-  font-weight: 700;
-  color: #00ff41;
+  font-size: 12px;
+  font-weight: 600;
+  color: #007aff;
 }
-
