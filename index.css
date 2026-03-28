@@ -205,8 +205,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-.visitor-count {
-  font-size: 12px;
-  font-weight: 600;
-  color: #007aff;
+.visitor-svg {
+  height: 14px;
+  vertical-align: middle;
 }
