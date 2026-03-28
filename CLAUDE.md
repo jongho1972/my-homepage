@@ -6,6 +6,12 @@
 
 이종호(J.Hawk)의 정적 개인 홈페이지입니다. 빌드 시스템, 의존성, 패키지 매니저 없이 순수 HTML, CSS, 이미지 파일로만 구성되어 있습니다.
 
+## 배포
+
+- **저장소**: https://github.com/jongho1972/my-homepage
+- **서비스 URL**: https://jongho1972.netlify.app
+- GitHub `main` 브랜치 푸시 시 Netlify 자동 배포
+
 ## 개발 방법
 
 `index.html`을 브라우저에서 직접 열거나, 아래 명령으로 로컬 서버를 실행합니다:
