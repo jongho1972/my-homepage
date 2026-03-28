@@ -57,12 +57,15 @@
     </div>
   </div>
 
+  <script data-goatcounter="https://jongho1972.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
   <script>
-    fetch('https://api.counterapi.dev/v1/jhawk-homepage/visit/up')
+    fetch('https://jongho1972.goatcounter.com/counter//.json')
       .then(r => r.json())
       .then(d => {
-        document.getElementById('visitor-count').textContent = d.count.toLocaleString();
-      });
+        document.getElementById('visitor-count').textContent = Number(d.count_unique).toLocaleString();
+      })
+      .catch(() => {});
 
     function checkPassword(e, el) {
       e.preventDefault();
