@@ -188,3 +188,25 @@ body {
   color: #8e8e93;
 }
 
+/* ── 방문자 카운터 ── */
+.visitor-counter {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.visitor-counter:hover { opacity: 1; }
+
+.visitor-label {
+  font-size: 11px;
+  color: #8e8e93;
+  letter-spacing: 0.5px;
+}
+
+.visitor-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #007aff;
+}

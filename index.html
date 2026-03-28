@@ -57,12 +57,25 @@
         </a>
       </div>
 
+      <!-- 방문자 카운터 -->
+      <div class="visitor-counter">
+        <span class="visitor-label">visitors</span>
+        <span class="visitor-count" id="visitor-count">—</span>
+      </div>
+
     </div>
   </div>
 
   <script data-goatcounter="https://jongho1972.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
   <script>
+    fetch('https://jongho1972.goatcounter.com/counter/%2F.json')
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById('visitor-count').textContent = Number(d.count).toLocaleString();
+      })
+      .catch(() => {});
+
     function checkPassword(e, el) {
       e.preventDefault();
       const pw = prompt('비밀번호를 입력해 주세요');
