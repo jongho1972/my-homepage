@@ -22,11 +22,12 @@ python3 -m http.server 8000
 
 ## 구조
 
-파일 3개로 구성:
+파일 4개로 구성:
 
 - `index.html` — 단일 섹션: 전체 뷰포트 프로필 카드(`.container`)
 - `index.css` — 모든 스타일; Google Fonts(JetBrains Mono) 사용; 프레임워크 없음
 - `jh.jpg` — 프로필 사진, 파비콘으로도 사용
+- `README.md` — 프로젝트 소개 (GitHub 표시용)
 
 프로필 섹션 구성 (위에서 아래 순서):
 - 프로필 사진 (`.profile_pic`)
