@@ -9,7 +9,7 @@
 ## 배포
 
 - **저장소**: https://github.com/jongho1972/my-homepage
-- **서비스 URL**: https://jongho1972.netlify.app
+- **서비스 URL**: https://j-hawk.netlify.app
 - GitHub `main` 브랜치 푸시 시 Netlify 자동 배포
 
 ## 개발 방법
@@ -22,20 +22,21 @@ python3 -m http.server 8000
 
 ## 구조
 
-파일 4개로 구성:
+파일 구성:
 
 - `index.html` — 단일 섹션: 전체 뷰포트 프로필 카드(`.container`)
 - `index.css` — 모든 스타일; Google Fonts(JetBrains Mono) 사용; 프레임워크 없음
 - `jh.jpg` — 프로필 사진, 파비콘으로도 사용
 - `README.md` — 프로젝트 소개 (GitHub 표시용)
+- `.gitignore` — `preview_macos.html` 제외
 
 프로필 섹션 구성 (위에서 아래 순서):
 - 프로필 사진 (`.profile_pic`)
 - 이름: Jongho Lee, 닉네임: [J-Hawk]
 - 이메일 링크: jongho1972@gmail.com
-- 외부 프로젝트 버튼 3개 (iframe 없이 외부 링크만):
+- 외부 프로젝트 버튼 3개 (모두 현재 창에서 열림, `target="_blank"` 없음):
   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드
   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
-  - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 (비밀번호 보호: 클릭 시 비밀번호 입력 필요, 틀리면 "죄송합니다. 접속이 제한되는 페이지입니다." 안내)
+  - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호: 클릭 시 "비밀번호를 입력해 주세요" 팝업, 비밀번호: `0000`, 틀리면 "죄송합니다. 접속이 제한되는 페이지입니다." 안내)
 - 바로가기 아이콘 (`.shortcuts`):
   - Instagram: `https://www.instagram.com/jongho1972/?hl=ko`
