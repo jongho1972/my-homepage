@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+
+body { min-width: 300px; }
+
+/* ── 프로필 섹션 ── */
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #0d1117;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  min-height: 460px;
+}
+
+.profile_pic {
+  width: 100px;
+  height: 100px;
+  background-image: url(jh.jpg);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #00ff41;
+  border-radius: 4px;
+  filter: grayscale(30%) brightness(0.85);
+}
+
+.profile_name {
+  color: #00ff41;
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background: #00ff41;
+  vertical-align: middle;
+  margin-left: 6px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.profile_nick {
+  color: rgba(0, 255, 65, 0.5);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.prompt {
+  color: rgba(0, 255, 65, 0.4);
+}
+
+/* ── 이메일 ── */
+.email-link {
+  color: rgba(0, 255, 65, 0.5);
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.email-link:hover {
+  color: #00ff41;
+}
+
+/* ── 버튼 ── */
+.travel-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 65, 0.35);
+  border-radius: 4px;
+  text-decoration: none;
+  color: #00ff41;
+  transition: all 0.2s ease;
+  max-width: 440px;
+  width: 100%;
+}
+
+.travel-btn:hover {
+  background: rgba(0, 255, 65, 0.07);
+  border-color: #00ff41;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
+}
+
+.travel-btn-arrow {
+  font-size: 14px;
+  flex-shrink: 0;
+  color: #00ff41;
+}
+
+.travel-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.travel-btn-label {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.travel-btn-sub {
+  font-size: 12px;
+  color: rgba(0, 255, 65, 0.4);
+}
+
+/* ── 바로가기 아이콘 ── */
+.shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin-top: 36px;
+  max-width: 480px;
+}
+
+.shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  width: 88px;
+}
+
+.shortcut-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(0, 255, 65, 0.06);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.shortcut-icon img {
+  width: 36px;
+  height: 36px;
+}
+
+.shortcut:hover .shortcut-icon {
+  background: rgba(0, 255, 65, 0.12);
+  border-color: #00ff41;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.shortcut-label {
+  font-size: 13px;
+  color: rgba(0, 255, 65, 0.5);
+  text-align: center;
+  word-break: keep-all;
+  width: 100%;
+  transition: color 0.2s;
+}
+
+.shortcut:hover .shortcut-label {
+  color: #00ff41;
+}
+

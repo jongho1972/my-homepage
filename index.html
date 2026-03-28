@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J-Hawk's Homepage</title>
+  <link href="index.css" rel="stylesheet">
+  <link href="jh.jpg" rel="icon">
+</head>
+
+<body>
+
+  <!-- 프로필 섹션 -->
+  <div class="container">
+    <div class="profile">
+      <div class="profile_pic"></div>
+      <h3 class="profile_name">Jongho Lee<span class="cursor"></span></h3>
+      <p class="profile_nick">[J-Hawk]</p>
+      <a class="email-link" href="mailto:jongho1972@gmail.com">jongho1972@gmail.com</a>
+      <a class="travel-btn" href="https://jhawk-etf-dashboard.streamlit.app">
+        <span class="travel-btn-arrow">▶</span>
+        <span class="travel-btn-text">
+          <span class="travel-btn-label">ETF 투자 대시보드</span>
+          <span class="travel-btn-sub">한국 ETF 조회 · 시뮬레이션 · 비교 차트</span>
+        </span>
+      </a>
+      <a class="travel-btn" href="https://lottery-number-generator.onrender.com/">
+        <span class="travel-btn-arrow">▶</span>
+        <span class="travel-btn-text">
+          <span class="travel-btn-label">통계 기반 복권번호 생성기</span>
+          <span class="travel-btn-sub">로또 · 연금복권</span>
+        </span>
+      </a>
+      <a class="travel-btn" href="https://east-europe-tour.netlify.app" onclick="return checkPassword(event, this)"
+        <span class="travel-btn-arrow">▶</span>
+        <span class="travel-btn-text">
+          <span class="travel-btn-label">동유럽 여행 코스</span>
+          <span class="travel-btn-sub">Budapest · Vienna · Prague · 2026</span>
+        </span>
+      </a>
+      <!-- 바로가기 아이콘 -->
+      <div class="shortcuts">
+        <a class="shortcut" href="https://www.instagram.com/jongho1972/?hl=ko" target="_blank" rel="noopener">
+          <div class="shortcut-icon"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128"
+              alt="Instagram"></div>
+          <span class="shortcut-label">Instagram</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword(e, el) {
+      e.preventDefault();
+      const pw = prompt('저의 생일을 입력해 주세요(MMDD)');
+      if (pw === '0708') {
+        window.location.href = el.href;
+      } else if (pw !== null) {
+        alert('죄송합니다. 접속이 제한되는 페이지입니다.');
+      }
+      return false;
+    }
+  </script>
+
+</body>
+
+</html>
