@@ -185,3 +185,14 @@ body { min-width: 300px; }
   color: #00ff41;
 }
 
+/* ── 방문자 카운터 ── */
+.visitor-counter {
+  margin-top: 28px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.visitor-counter:hover {
+  opacity: 1;
+}
+
