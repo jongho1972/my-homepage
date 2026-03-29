@@ -37,7 +37,7 @@ python3 -m http.server 8000
 - 외부 프로젝트 버튼 3개 (모두 현재 창에서 열림, `target="_blank"` 없음):
   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드
   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
-  - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호: 클릭 시 "비밀번호를 입력해 주세요" 팝업, 비밀번호: `0000`, 틀리면 "죄송합니다. 접속이 제한되는 페이지입니다." 안내)
+  - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호: 클릭 시 "비밀번호를 입력해 주세요" 팝업, 비밀번호: `0000`, 틀리면 "죄송합니다. 접속이 제한되는 페이지입니다." 안내) — **현재 `display:none` 으로 숨김 (일정 확정 후 해제)**
 - 바로가기 아이콘 (`.shortcuts`):
   - Instagram: `https://www.instagram.com/jongho1972/?hl=ko`
 - 방문자 카운터 (`.visitor-counter`):
