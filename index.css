@@ -120,6 +120,7 @@ body {
 .ic-blue   { background: linear-gradient(145deg, #34aadc, #007aff); }
 .ic-green  { background: linear-gradient(145deg, #4cd964, #34c759); }
 .ic-purple { background: linear-gradient(145deg, #c084fc, #7c3aed); }
+.ic-red    { background: linear-gradient(145deg, #ff6b6b, #e63946); }
 
 .travel-btn-text {
   display: flex;
