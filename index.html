@@ -53,7 +53,15 @@
         </span>
         <span class="travel-btn-chevron">›</span>
       </a>
-      <a class="travel-btn" href="https://east-europe-tour.netlify.app" onclick="return checkPassword(event, this)" style="display:none">
+      <a class="travel-btn" href="https://jeonju-tour.netlify.app" data-password="1472" onclick="return checkPassword(event, this)">
+        <div class="travel-btn-icon ic-orange">🏯</div>
+        <span class="travel-btn-text">
+          <span class="travel-btn-label">전주 2박3일 가족여행 <span style="font-size:0.75em">[가족 Only]</span></span>
+          <span class="travel-btn-sub">한옥마을 · 맛집 · 인터랙티브 지도</span>
+        </span>
+        <span class="travel-btn-chevron">›</span>
+      </a>
+      <a class="travel-btn" href="https://east-europe-tour.netlify.app" data-password="0000" onclick="return checkPassword(event, this)" style="display:none">
         <div class="travel-btn-icon ic-purple">✈️</div>
         <span class="travel-btn-text">
           <span class="travel-btn-label">동유럽 여행 코스 <span style="font-size:0.75em">[가족 Only]</span></span>
@@ -95,7 +103,7 @@
     function checkPassword(e, el) {
       e.preventDefault();
       const pw = prompt('비밀번호를 입력해 주세요');
-      if (pw === '0000') {
+      if (pw === el.dataset.password) {
         window.location.href = el.href;
       } else if (pw !== null) {
         alert('죄송합니다. 접속이 제한되는 페이지입니다.');
