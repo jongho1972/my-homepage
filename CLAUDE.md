@@ -34,11 +34,14 @@ python3 -m http.server 8000
 - 프로필 사진 (`.profile_pic`)
 - 이름: Jongho Lee, 닉네임: [J-Hawk]
 - 이메일 링크: jongho1972@gmail.com
-- 외부 프로젝트 버튼 4개 (모두 현재 창에서 열림, `target="_blank"` 없음):
+- 외부 프로젝트 버튼 (모두 현재 창에서 열림, `target="_blank"` 없음):
   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드
   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
   - `https://saju-fortune.onrender.com/` — AI 사주팔자 (생년월일시로 보는 나의 사주)
-  - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호: 클릭 시 "비밀번호를 입력해 주세요" 팝업, 비밀번호: `0000`, 틀리면 "죄송합니다. 접속이 제한되는 페이지입니다." 안내) — **현재 `display:none` 으로 숨김 (일정 확정 후 해제)**
+  - `https://edm-creator.netlify.app/` — EDM Creator (19가지 스타일 라이브 코딩 음악 생성기)
+  - `https://jeonju-tour.netlify.app` — 전주 여행 코스 [가족 Only] (비밀번호 보호, `data-password="1472"`)
+  - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`) — **현재 `display:none` 으로 숨김 (일정 확정 후 해제)**
+- 비밀번호 보호: `checkPassword(event, el)` 공용 함수가 `el.dataset.password`와 비교. 클릭 시 "비밀번호를 입력해 주세요" 프롬프트 → 일치 시 이동, 불일치 시 "죄송합니다. 접속이 제한되는 페이지입니다." 안내.
 - 바로가기 아이콘 (`.shortcuts`):
   - Instagram: `https://www.instagram.com/jongho1972/?hl=ko`
 - 방문자 카운터 (`.visitor-counter`):
