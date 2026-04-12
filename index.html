@@ -18,6 +18,7 @@
       <h3 class="profile_name">Jongho Lee</h3>
       <p class="profile_nick">[J-Hawk]</p>
       <a class="email-link" href="mailto:jongho1972@gmail.com">jongho1972@gmail.com</a>
+      <button type="button" class="career-link" onclick="openCareer()">📋 경력 사항</button>
 
       <div class="divider"></div>
 
@@ -90,6 +91,54 @@
     </div>
   </div>
 
+  <!-- 경력 사항 모달 -->
+  <div class="career-modal" id="careerModal" onclick="closeCareer(event)">
+    <div class="career-modal-content" onclick="event.stopPropagation()">
+      <button type="button" class="career-modal-close" onclick="closeCareer()">×</button>
+      <h2 class="career-modal-title">경력 사항</h2>
+
+      <div class="career-item">
+        <div class="career-period">1999.08 ~ 2000.07</div>
+        <div class="career-company">현대리서치</div>
+        <ul class="career-dept"><li>사회여론조사팀</li></ul>
+      </div>
+
+      <div class="career-item">
+        <div class="career-period">2000.07 ~ 2001.05</div>
+        <div class="career-company">중앙리서치</div>
+        <ul class="career-dept"><li>마케팅리서치팀</li></ul>
+      </div>
+
+      <div class="career-item">
+        <div class="career-period">2001.05 ~ 2003.02</div>
+        <div class="career-company">AC닐슨</div>
+        <ul class="career-dept"><li>미디어사업본부</li></ul>
+      </div>
+
+      <div class="career-item">
+        <div class="career-period">2003.03 ~ 2012.08</div>
+        <div class="career-company">LG유플러스 <span class="career-note">(구 LG텔레콤)</span></div>
+        <ul class="career-dept">
+          <li>마케팅조사팀</li>
+          <li>CRM분석팀</li>
+          <li>고객분석팀</li>
+        </ul>
+      </div>
+
+      <div class="career-item">
+        <div class="career-period">2012.09 ~ 현재</div>
+        <div class="career-company">호텔신라</div>
+        <ul class="career-dept">
+          <li>면세유통사업부 마케팅전략기획그룹</li>
+          <li>HDC신라면세점 마케팅전략팀</li>
+          <li>TR&nbsp;영업마케팅기획그룹</li>
+          <li>TR&nbsp;타겟마케팅그룹</li>
+          <li>TR&nbsp;인천공항점(마케팅)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script data-goatcounter="https://jongho1972.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
   <script>
@@ -99,6 +148,19 @@
         document.getElementById('visitor-count').textContent = Number(d.count).toLocaleString();
       })
       .catch(() => {});
+
+    function openCareer() {
+      document.getElementById('careerModal').classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCareer(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('careerModal').classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeCareer();
+    });
 
     function checkPassword(e, el) {
       e.preventDefault();
