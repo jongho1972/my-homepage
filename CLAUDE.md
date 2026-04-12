@@ -42,6 +42,7 @@ python3 -m http.server 8000
   - `https://jeonju-tour.netlify.app` — 전주 여행 코스 [가족 Only] (비밀번호 보호, `data-password="1472"`)
   - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`) — **현재 `display:none` 으로 숨김 (일정 확정 후 해제)**
 - 비밀번호 보호: `checkPassword(event, el)` 공용 함수가 `el.dataset.password`와 비교. 클릭 시 "비밀번호를 입력해 주세요" 프롬프트 → 일치 시 이동, 불일치 시 "죄송합니다. 접속이 제한되는 페이지입니다." 안내.
+- Personal History 모달: 이메일 아래 `.career-link` 버튼 → `#careerModal` 팝업. 학력(성균관대 학사/석사) + 경력(현대리서치~호텔신라) 타임라인 표시. `openCareer()`/`closeCareer()` 함수, ESC·배경 클릭·X 버튼으로 닫힘.
 - 바로가기 아이콘 (`.shortcuts`):
   - Instagram: `https://www.instagram.com/jongho1972/?hl=ko`
 - 방문자 카운터 (`.visitor-counter`):
