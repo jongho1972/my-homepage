@@ -38,7 +38,7 @@ python3 -m http.server 8000
   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드
   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
   - `https://saju-fortune.onrender.com/` — AI 사주팔자 (생년월일시로 보는 나의 사주)
-  - `https://edm-creator.netlify.app/` — Music Creator (80개 장르 라이브 코딩 음악 생성기 · DJ 콘솔)
+  - `https://strudel-creator.netlify.app/` — Music Creator (80개 장르 라이브 코딩 음악 생성기 · DJ 콘솔)
   - `https://jeonju-tour.netlify.app` — 전주 여행 코스 [가족 Only] (비밀번호 보호, `data-password="1472"`)
   - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`) — **현재 `display:none` 으로 숨김 (일정 확정 후 해제)**
 - 비밀번호 보호: `checkPassword(event, el)` 공용 함수가 `el.dataset.password`와 비교. 클릭 시 "비밀번호를 입력해 주세요" 프롬프트 → 일치 시 이동, 불일치 시 "죄송합니다. 접속이 제한되는 페이지입니다." 안내.
