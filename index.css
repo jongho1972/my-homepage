@@ -237,6 +237,11 @@ body {
 }
 .travel-btn:last-of-type { margin-bottom: 0; }
 .travel-btn:hover { background: rgba(118, 118, 128, 0.15); }
+.travel-btn.is-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 .travel-btn-icon {
   width: 36px;
