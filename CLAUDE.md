@@ -41,7 +41,7 @@ python3 -m http.server 8000
   - `https://strudel-creator.netlify.app/` — Music Creator (7개 카테고리 90개 장르 라이브 코딩 생성기 · DJ 콘솔)
   - `https://jeonju-tour.netlify.app` — 5월 전주 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`)
   - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`) — **현재 `display:none` 으로 숨김 (일정 확정 후 해제)**
-  - `https://shilla-icn-mkt.netlify.app` — **I'm project** (신라면세점, 준비 중) — 비활성 버튼(`is-disabled` 클래스, 클릭 차단) — **항상 맨 아래에 배치**
+  - `https://shilla-icn-mkt.netlify.app` — **I'm project** (신라면세점) — `is-disabled` 클래스로 외형만 비활성(흐림 처리), 클릭은 정상 동작 — **항상 맨 아래에 배치**
 - 비밀번호 보호: `checkPassword(event, el)` 공용 함수가 `el.dataset.password`와 비교. 클릭 시 "비밀번호를 입력해 주세요" 프롬프트 → 일치 시 이동, 불일치 시 "죄송합니다. 접속이 제한되는 페이지입니다." 안내.
 - Personal History 모달: 이메일 아래 `.career-link` 버튼 → `#careerModal` 팝업. 학력(성균관대 학사/석사) + 경력(현대리서치~호텔신라) 타임라인 표시. `openCareer()`/`closeCareer()` 함수, ESC·배경 클릭·X 버튼으로 닫힘.
 - 바로가기 아이콘 (`.shortcuts`):
