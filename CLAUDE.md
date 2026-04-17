@@ -38,7 +38,7 @@ python3 -m http.server 8000
   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드
   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
   - `https://saju-fortune.onrender.com/` — AI 사주팔자 (생년월일시로 보는 나의 사주)
-  - `https://strudel-creator.netlify.app/` — Music Creator (7개 카테고리 90개 장르 라이브 코딩 생성기 · DJ 콘솔)
+  - `https://strudel-creator.netlify.app/` — Music Creator (DJ Top 10 · 15초 완성 프리셋 · 라이브 DJ 콘솔)
   - `https://jeonju-tour.netlify.app` — 5월 전주 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`)
   - `https://east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`) — **현재 `display:none` 으로 숨김 (일정 확정 후 해제)**
   - `https://shilla-icn-mkt.netlify.app` — **I'm project** (신라면세점) — `is-disabled` 클래스로 외형만 비활성(흐림 처리), 클릭은 정상 동작 — **항상 맨 아래에 배치**
