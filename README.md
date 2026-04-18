@@ -17,7 +17,7 @@
 | AI 사주팔자 | https://saju-fortune.onrender.com |
 | Music Creator | https://strudel-creator.netlify.app |
 | I'm project (Classified) | https://shilla-icn-mkt.netlify.app |
-| 전주 여행 코스 (가족 Only) | https://jeonju-tour.netlify.app |
+| 전주 여행 코스 (가족 Only) | https://jhawk-jeonju-tour.netlify.app |
 | 동유럽 여행 코스 (가족 Only / On Hold) | https://jhawk-east-europe-tour.netlify.app |
 
 ## 기술 스택
