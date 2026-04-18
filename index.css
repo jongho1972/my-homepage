@@ -69,7 +69,8 @@ body {
 }
 
 .profile_nick {
-  font-size: 13px;
+  font-size: 12px;
+  font-style: italic;
   color: #636366;
   margin-top: 4px;
 }
