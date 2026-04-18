@@ -39,10 +39,10 @@ python3 -m http.server 8000
   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
   - `https://saju-fortune.onrender.com/` — AI 사주팔자 (생년월일시로 보는 나의 사주)
   - `https://jhawk-edm-dj.netlify.app` — EDM DJ Console (Claude Code와 만든 EDM · DJ 체험)
-  - `https://jhawk-jeonju-tour.netlify.app` — 5월 전주 여행 코스 [가족 Only] (비밀번호 보호, `data-password="0000"`)
-  - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only / On Hold] (목적지 페이지에 오버레이 비밀번호 게이트 `0000`)
-  - `https://shilla-icn-mkt.netlify.app` — **I'm project** (신라면세점) — `is-disabled` 클래스로 외형만 비활성(흐림 처리), 클릭은 정상 동작 — EDM DJ Console 바로 다음 위치
-- 비밀번호 보호: `checkPassword(event, el)` 공용 함수가 `el.dataset.password`와 비교. 클릭 시 "비밀번호를 입력해 주세요" 프롬프트 → 일치 시 이동, 불일치 시 "죄송합니다. 접속이 제한되는 페이지입니다." 안내.
+  - `https://jhawk-jeonju-tour.netlify.app` — 5월 전주 여행 코스 [가족 Only] (목적지 페이지에 자체 비밀번호 게이트 `0000`)
+  - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only / On Hold] (목적지 페이지에 자체 비밀번호 게이트 `0000`)
+  - `https://shilla-icn-mkt.netlify.app` — **I'm project** (신라면세점, 가족/내부용) — EDM DJ Console 바로 다음 위치
+- 비밀번호 보호 표시: 비밀번호가 필요한 링크(전주·동유럽·I'm project)는 `.travel-btn-chevron` 위치에 🔒 아이콘 표시. 실제 인증은 목적지 페이지에서 수행(홈페이지는 직접 네비게이트).
 - Personal History 모달: 이메일 아래 `.career-link` 버튼 → `#careerModal` 팝업. 학력(성균관대 학사/석사) + 경력(현대리서치~호텔신라) 타임라인 표시. `openCareer()`/`closeCareer()` 함수, ESC·배경 클릭·X 버튼으로 닫힘.
 - 바로가기 아이콘 (`.shortcuts`):
   - Instagram: `https://www.instagram.com/jongho1972/?hl=ko`

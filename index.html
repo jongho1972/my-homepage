@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#e8e8ed">
+  <meta name="description" content="이종호(J-Hawk) 개인 홈페이지 — ETF 대시보드 · 복권 · 사주 · EDM DJ · 여행 코스 등 Claude Code 기반 프로젝트 모음">
   <title>J-Hawk's Homepage</title>
-  <link href="index.css" rel="stylesheet">
+  <link href="index.css?v=20260418" rel="stylesheet">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
   <link href="jh.jpg" rel="icon" type="image/jpeg" sizes="any">
+  <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
+  <link rel="preconnect" href="https://www.google.com">
 </head>
 
 <body>
@@ -16,21 +21,10 @@
   <div class="container">
     <div class="profile">
       <div class="profile_pic"></div>
-      <h3 class="profile_name">Jongho Lee</h3>
-      <p class="profile_nick">[J-Hawk]</p>
+      <h1 class="profile_name">Jongho Lee</h1>
+      <p class="profile_nick">GD는 G-Dragon, JH는 J-Hawk 🦅</p>
       <a class="email-link" href="mailto:jongho1972@gmail.com">jongho1972@gmail.com</a>
-      <button type="button" class="career-link" onclick="openCareer()">📋 Personal History</button>
-
-      <div class="favorite-songs">
-        <span class="favorite-songs-title">🎵 My Favorite Singer — 장기하</span>
-        <div class="favorite-songs-links">
-          <a href="https://www.youtube.com/watch?v=U4nToho9Ot8" target="_blank" rel="noopener">그건 니 생각이고</a>
-          <span class="favorite-songs-sep">·</span>
-          <a href="https://www.youtube.com/watch?v=aHhACNlwHgE" target="_blank" rel="noopener">거절할 거야</a>
-          <span class="favorite-songs-sep">·</span>
-          <a href="https://www.youtube.com/watch?v=AxPlLEpt42w" target="_blank" rel="noopener">할건지말건지</a>
-        </div>
-      </div>
+      <button type="button" class="career-link" aria-haspopup="dialog" aria-expanded="false" aria-controls="careerModal" onclick="openCareer()">📋 Personal History</button>
 
       <div class="divider"></div>
 
@@ -71,7 +65,7 @@
         <span class="travel-btn-text">
           <span class="travel-btn-label">I'm project <span style="font-size:0.75em">[Classified]</span></span>
         </span>
-        <span class="travel-btn-chevron">›</span>
+        <span class="travel-btn-chevron">🔒</span>
       </a>
       <a class="travel-btn" href="https://jhawk-jeonju-tour.netlify.app">
         <div class="travel-btn-icon ic-orange">🏯</div>
@@ -79,7 +73,7 @@
           <span class="travel-btn-label">전주 여행 코스 <span style="font-size:0.75em">[가족 Only / 2026.05]</span></span>
           <span class="travel-btn-sub">한옥마을 · 맛집 · 인터랙티브 지도</span>
         </span>
-        <span class="travel-btn-chevron">›</span>
+        <span class="travel-btn-chevron">🔒</span>
       </a>
       <a class="travel-btn" href="https://jhawk-east-europe-tour.netlify.app">
         <div class="travel-btn-icon ic-purple">✈️</div>
@@ -87,16 +81,27 @@
           <span class="travel-btn-label">동유럽 여행 코스 <span style="font-size:0.75em">[가족 Only / On Hold]</span></span>
           <span class="travel-btn-sub">헝가리 · 오스트리아 · 체코</span>
         </span>
-        <span class="travel-btn-chevron">›</span>
+        <span class="travel-btn-chevron">🔒</span>
       </a>
 
       <div class="divider"></div>
+
+      <div class="favorite-songs">
+        <span class="favorite-songs-title">🎵 My favorite songs</span>
+        <div class="favorite-songs-links">
+          <a href="https://www.youtube.com/watch?v=U4nToho9Ot8" target="_blank" rel="noopener">그건 니 생각이고</a>
+          <span class="favorite-songs-sep">·</span>
+          <a href="https://www.youtube.com/watch?v=aHhACNlwHgE" target="_blank" rel="noopener">거절할 거야</a>
+          <span class="favorite-songs-sep">·</span>
+          <a href="https://www.youtube.com/watch?v=AxPlLEpt42w" target="_blank" rel="noopener">할건지말건지</a>
+        </div>
+      </div>
 
       <!-- 바로가기 아이콘 -->
       <div class="shortcuts">
         <a class="shortcut" href="https://www.instagram.com/jongho1972/?hl=ko">
           <div class="shortcut-icon"><img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=128"
-              alt="Instagram"></div>
+              alt="" width="34" height="34" loading="lazy"></div>
           <span class="shortcut-label">Instagram</span>
         </a>
       </div>
@@ -104,17 +109,17 @@
       <!-- 방문자 카운터 -->
       <div class="visitor-counter">
         <span class="visitor-label">visitors</span>
-        <span class="visitor-count" id="visitor-count">—</span>
+        <span class="visitor-count" id="visitor-count" aria-live="polite" aria-atomic="true">—</span>
       </div>
 
     </div>
   </div>
 
   <!-- 경력 사항 모달 -->
-  <div class="career-modal" id="careerModal" onclick="closeCareer(event)">
+  <div class="career-modal" id="careerModal" role="dialog" aria-modal="true" aria-labelledby="careerModalTitle" aria-hidden="true" onclick="closeCareer(event)">
     <div class="career-modal-content" onclick="event.stopPropagation()">
-      <button type="button" class="career-modal-close" onclick="closeCareer()">×</button>
-      <h2 class="career-modal-title">Personal History</h2>
+      <button type="button" class="career-modal-close" aria-label="닫기" onclick="closeCareer()">×</button>
+      <h2 class="career-modal-title" id="careerModalTitle">Personal History</h2>
 
       <div class="career-item">
         <div class="career-period">1991.03 ~ 1997.02</div>
@@ -180,29 +185,50 @@
       })
       .catch(() => {});
 
+    let lastFocusedBeforeModal = null;
     function openCareer() {
-      document.getElementById('careerModal').classList.add('is-open');
+      const modal = document.getElementById('careerModal');
+      const trigger = document.querySelector('.career-link');
+      lastFocusedBeforeModal = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      if (trigger) trigger.setAttribute('aria-expanded', 'true');
+      const firstFocusable = modal.querySelector('.career-modal-close');
+      if (firstFocusable) firstFocusable.focus();
     }
     function closeCareer(e) {
       if (e && e.target !== e.currentTarget) return;
-      document.getElementById('careerModal').classList.remove('is-open');
+      const modal = document.getElementById('careerModal');
+      const trigger = document.querySelector('.career-link');
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      if (lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === 'function') {
+        lastFocusedBeforeModal.focus();
+      }
+    }
+
+    function trapFocus(e, modal) {
+      const focusables = modal.querySelectorAll('button, a[href], input:not([type="hidden"]), [tabindex]:not([tabindex="-1"])');
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeCareer();
+      const careerModal = document.getElementById('careerModal');
+      const careerOpen = careerModal && careerModal.classList.contains('is-open');
+      if (e.key === 'Escape' && careerOpen) { closeCareer(); return; }
+      if (e.key === 'Tab' && careerOpen) trapFocus(e, careerModal);
     });
-
-    function checkPassword(e, el) {
-      e.preventDefault();
-      const pw = prompt('비밀번호를 입력해 주세요');
-      if (pw === el.dataset.password) {
-        window.location.href = el.href;
-      } else if (pw !== null) {
-        alert('죄송합니다. 접속이 제한되는 페이지입니다.');
-      }
-      return false;
-    }
   </script>
 
 </body>
