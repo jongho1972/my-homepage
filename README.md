@@ -15,7 +15,7 @@
 | ETF 투자 대시보드 | https://jhawk-etf-dashboard.streamlit.app |
 | 통계 기반 복권번호 생성기 | https://lottery-number-generator.onrender.com |
 | AI 사주팔자 | https://saju-fortune.onrender.com |
-| Music Creator | https://strudel-creator.netlify.app |
+| EDM DJ Console | https://jhawk-edm-dj.netlify.app |
 | I'm project (Classified) | https://shilla-icn-mkt.netlify.app |
 | 전주 여행 코스 (가족 Only) | https://jhawk-jeonju-tour.netlify.app |
 | 동유럽 여행 코스 (가족 Only / On Hold) | https://jhawk-east-europe-tour.netlify.app |
