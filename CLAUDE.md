@@ -50,3 +50,4 @@ python3 -m http.server 8000
   - GoatCounter 트래킹: `https://jongho1972.goatcounter.com`
   - 카운터 표시: `fetch('https://jongho1972.goatcounter.com/counter/%2F.json')` → `d.count` 표시
   - GoatCounter Settings에서 "Allow adding visitor counts on your website" 체크 필요 (CORS 허용)
+- 하단 푸터 (`.site-footer`): `.profile` 카드 아래, "Built with Claude Code by 이종호 (jongho1972@gmail.com)" 표기. border-top + 중앙정렬, 회색 톤
