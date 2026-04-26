@@ -41,7 +41,7 @@ python3 -m http.server 8000
   - `https://jhawk-edm-dj.netlify.app` — EDM DJ Console (Claude Code와 만든 EDM · DJ 체험)
   - `https://jhawk-jeonju-tour.netlify.app` — 5월 전주 여행 코스 [가족 Only] (목적지 페이지에 자체 비밀번호 게이트 `0000`)
   - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only / On Hold] (목적지 페이지에 자체 비밀번호 게이트 `0000`)
-  - `https://shilla-icn-mkt.netlify.app` — **I'm project** (신라면세점, 가족/내부용) — EDM DJ Console 바로 다음 위치
+  - `https://shilla-icn-mkt.netlify.app/프로모션기획/` — **I'm project** (신라면세점, 가족/내부용) — EDM DJ Console 바로 다음 위치
 - 비밀번호 보호 표시: 비밀번호가 필요한 링크(전주·동유럽·I'm project)는 `.travel-btn-chevron` 위치에 🔒 아이콘 표시. 실제 인증은 목적지 페이지에서 수행(홈페이지는 직접 네비게이트).
 - Personal History 모달: 이메일 아래 `.career-link` 버튼 → `#careerModal` 팝업. 학력(성균관대 학사/석사) + 경력(현대리서치~호텔신라) 타임라인 표시. `openCareer()`/`closeCareer()` 함수, ESC·배경 클릭·X 버튼으로 닫힘.
 - 바로가기 아이콘 (`.shortcuts`):
