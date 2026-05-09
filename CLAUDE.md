@@ -34,6 +34,7 @@ python3 -m http.server 8000
 - 프로필 사진 (`.profile_pic`)
 - 이름: Jongho Lee, 닉네임: [J-Hawk]
 - 이메일 링크: jongho1972@gmail.com
+- Instagram 링크 (`.instagram-link`): 이메일 바로 아래, 작은 favicon + `@jongho1972` 텍스트, `https://www.instagram.com/jongho1972/?hl=ko` 새 창 오픈
 - 외부 프로젝트 버튼 (모두 현재 창에서 열림, `target="_blank"` 없음):
   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드
   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
@@ -43,8 +44,6 @@ python3 -m http.server 8000
   - `https://shilla-icn-mkt.netlify.app/` — **I'm project** (Incheon Marketing Project 랜딩, 비번 無) — EDM DJ Console 바로 다음 위치. 랜딩에서 하위 메뉴(월별 프로모션·출발 항공편·관광통계) 분기, 하위 페이지는 각자 비번 게이트 유지
 - 비밀번호 보호 표시: 비밀번호가 필요한 링크(동유럽)는 `.travel-btn-chevron` 위치에 🔒 아이콘 표시. 실제 인증은 목적지 페이지에서 수행(홈페이지는 직접 네비게이트). I'm project는 랜딩이 공개라 ›로 표시.
 - Personal History 모달: 이메일 아래 `.career-link` 버튼 → `#careerModal` 팝업. 학력(성균관대 학사/석사) + 경력(현대리서치~호텔신라) 타임라인 표시. `openCareer()`/`closeCareer()` 함수, ESC·배경 클릭·X 버튼으로 닫힘.
-- 바로가기 아이콘 (`.shortcuts`):
-  - Instagram: `https://www.instagram.com/jongho1972/?hl=ko`
 - 방문자 카운터 (`.visitor-counter`):
   - GoatCounter 트래킹: `https://jongho1972.goatcounter.com`
   - 카운터 표시: `fetch('https://jongho1972.goatcounter.com/counter/%2F.json')` → `d.count` 표시
