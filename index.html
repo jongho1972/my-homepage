@@ -6,165 +6,226 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#e8e8ed">
+  <meta name="theme-color" content="#f5f5f7">
   <meta name="description" content="이종호(J-Hawk) 개인 홈페이지 — ETF 대시보드 · 복권 · 사주 · EDM DJ · 여행 코스 등 Claude Code 기반 프로젝트 모음">
-  <title>J-Hawk's Homepage</title>
-  <link href="index.css?v=20260509" rel="stylesheet">
+  <title>J-Hawk · Homepage</title>
+  <link href="index.css?v=20260510g" rel="stylesheet">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
   <link href="jh.jpg" rel="icon" type="image/jpeg" sizes="any">
   <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
-  <link rel="preconnect" href="https://www.google.com">
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="profile">
-      <div class="profile_pic"></div>
-      <h1 class="profile_name">Jongho Lee</h1>
-      <p class="profile_nick">“GD는 G-Dragon, JH는 J-Hawk”</p>
-      <a class="email-link" href="mailto:jongho1972@gmail.com">jongho1972@gmail.com</a>
-      <a class="instagram-link" href="https://www.instagram.com/jongho1972/?hl=ko" target="_blank" rel="noopener">
-        <img src="https://www.google.com/s2/favicons?domain=instagram.com&sz=64" alt="" width="14" height="14" loading="lazy">
-        <span>@jongho1972</span>
-      </a>
-      <button type="button" class="career-link" aria-haspopup="dialog" aria-expanded="false" aria-controls="careerModal" onclick="openCareer()">📋 Personal History</button>
+  <aside class="desk-note" aria-hidden="true">
+    Single-column · 모바일 레이아웃 그대로<br>데스크탑까지 — 폭 560px로 고정, 한 손에 잡히는 느낌
+  </aside>
 
-      <div class="divider"></div>
+  <main class="frame">
 
-      <a class="travel-btn" href="https://jhawk-etf-dashboard.streamlit.app">
-        <div class="travel-btn-icon ic-blue">📈</div>
-        <span class="travel-btn-text">
-          <span class="travel-btn-label">ETF 투자 대시보드</span>
-          <span class="travel-btn-sub">한국 ETF 조회 · 시뮬레이션 · 비교 차트</span>
-        </span>
-        <span class="travel-btn-chevron">›</span>
-      </a>
-      <a class="travel-btn" href="https://lottery-number-generator.onrender.com/">
-        <div class="travel-btn-icon ic-green">🎰</div>
-        <span class="travel-btn-text">
-          <span class="travel-btn-label">통계 기반 복권번호 생성기</span>
-          <span class="travel-btn-sub">로또 · 연금복권</span>
-        </span>
-        <span class="travel-btn-chevron">›</span>
-      </a>
-      <a class="travel-btn" href="https://saju-fortune.onrender.com/">
-        <div class="travel-btn-icon ic-red">🔮</div>
-        <span class="travel-btn-text">
-          <span class="travel-btn-label">AI 사주팔자</span>
-          <span class="travel-btn-sub">정통 만세력 + 진태양시 보정 · AI 친절 해석</span>
-        </span>
-        <span class="travel-btn-chevron">›</span>
-      </a>
-      <a class="travel-btn" href="https://jhawk-edm-dj.netlify.app">
-        <div class="travel-btn-icon ic-pink">🎧</div>
-        <span class="travel-btn-text">
-          <span class="travel-btn-label">EDM DJ Console</span>
-          <span class="travel-btn-sub">Claude Code와 만든 EDM · DJ 체험</span>
-        </span>
-        <span class="travel-btn-chevron">›</span>
-      </a>
-      <a class="travel-btn" href="https://shilla-icn-mkt.netlify.app/">
-        <div class="travel-btn-icon ic-red">🛍️</div>
-        <span class="travel-btn-text">
-          <span class="travel-btn-label">I'M PROJECT <span style="font-size:0.75em">[Classified]</span></span>
-        </span>
-        <span class="travel-btn-chevron">›</span>
-      </a>
-      <a class="travel-btn" href="https://jhawk-east-europe-tour.netlify.app">
-        <div class="travel-btn-icon ic-purple">✈️</div>
-        <span class="travel-btn-text">
-          <span class="travel-btn-label">동유럽 여행 코스 <span style="font-size:0.75em">[가족 Only / On hold]</span></span>
-          <span class="travel-btn-sub">헝가리 · 오스트리아 · 체코</span>
-        </span>
-        <span class="travel-btn-chevron">🔒</span>
-      </a>
-
-      <div class="divider"></div>
-
-      <div class="favorite-songs">
-        <span class="favorite-songs-title">🎵 My favorite songs</span>
-        <div class="favorite-songs-links">
-          <a href="https://www.youtube.com/watch?v=U4nToho9Ot8" target="_blank" rel="noopener">그건 니 생각이고</a>
-          <span class="favorite-songs-sep">·</span>
-          <a href="https://www.youtube.com/watch?v=aHhACNlwHgE" target="_blank" rel="noopener">거절할 거야</a>
-          <span class="favorite-songs-sep">·</span>
-          <a href="https://www.youtube.com/watch?v=AxPlLEpt42w" target="_blank" rel="noopener">할건지말건지</a>
-        </div>
+    <!-- Header -->
+    <header class="page-header">
+      <div class="brand">
+        <span class="logo-box">JH</span>
+        <span class="brand-label">J-HAWK</span>
       </div>
+      <span class="eyebrow">Seoul, KR</span>
+    </header>
 
-      <!-- 방문자 카운터 -->
-      <div class="visitor-counter">
-        <span class="visitor-label">visitors</span>
-        <span class="visitor-count" id="visitor-count" aria-live="polite" aria-atomic="true">—</span>
+    <!-- Hero -->
+    <section class="card card-dark hero">
+      <div class="eyebrow eyebrow-on-dark">Hello — 안녕하세요</div>
+      <div class="hero-headline">
+        <h1 class="hero-title">이종호<br><span class="accent">J-Hawk</span></h1>
+        <p class="hero-intro">“GD는 G-Dragon, JH는 J-Hawk”.</p>
       </div>
-
-    </div>
-
-    <footer class="site-footer">
-      Built with Claude Code by 이종호 (<a href="mailto:jongho1972@gmail.com">jongho1972@gmail.com</a>)
-    </footer>
-  </div>
-
-  <!-- 경력 사항 모달 -->
-  <div class="career-modal" id="careerModal" role="dialog" aria-modal="true" aria-labelledby="careerModalTitle" aria-hidden="true" onclick="closeCareer(event)">
-    <div class="career-modal-content" onclick="event.stopPropagation()">
-      <button type="button" class="career-modal-close" aria-label="닫기" onclick="closeCareer()">×</button>
-      <h2 class="career-modal-title" id="careerModalTitle">Personal History</h2>
-
-      <div class="career-item">
-        <div class="career-period">1991.03 ~ 1997.02</div>
-        <div class="career-company">성균관대학교</div>
-        <ul class="career-dept"><li>사회학과 (학사)</li></ul>
+      <div class="hero-actions">
+        <a class="pill pill-gmail" href="mailto:jongho1972@gmail.com" aria-label="Email jongho1972@gmail.com">
+          <svg class="pill-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#4285F4" d="M22 5.5v13c0 .83-.67 1.5-1.5 1.5H17V11l-5 3.75L7 11v9H3.5C2.67 20 2 19.33 2 18.5v-13C2 4.67 2.67 4 3.5 4h17c.83 0 1.5.67 1.5 1.5z"/>
+            <path fill="#34A853" d="M7 20H3.5C2.67 20 2 19.33 2 18.5V8l5 3.75V20z"/>
+            <path fill="#FBBC04" d="M22 8v10.5c0 .83-.67 1.5-1.5 1.5H17v-8.25L22 8z"/>
+            <path fill="#EA4335" d="M22 5.5L12 13 2 5.5C2 4.67 2.67 4 3.5 4h17c.83 0 1.5.67 1.5 1.5z"/>
+          </svg>
+          <span class="pill-label">jongho1972@gmail.com</span>
+        </a>
+        <a class="pill pill-instagram" href="https://www.instagram.com/jongho1972/?hl=ko" target="_blank" rel="noopener" aria-label="Instagram @jongho1972">
+          <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          <span class="pill-label">@jongho1972</span>
+        </a>
       </div>
+    </section>
 
-      <div class="career-item">
-        <div class="career-period">1997.03 ~ 1999.08</div>
-        <div class="career-company">성균관대학교</div>
-        <ul class="career-dept"><li>사회학과 (석사)</li></ul>
-      </div>
-
-      <div class="career-item">
-        <div class="career-period">1999.08 ~ 2000.07</div>
-        <div class="career-company">현대리서치</div>
-        <ul class="career-dept"><li>사회여론조사팀</li></ul>
-      </div>
-
-      <div class="career-item">
-        <div class="career-period">2000.07 ~ 2001.05</div>
-        <div class="career-company">중앙리서치</div>
-        <ul class="career-dept"><li>마케팅리서치팀</li></ul>
-      </div>
-
-      <div class="career-item">
-        <div class="career-period">2001.05 ~ 2003.02</div>
-        <div class="career-company">AC닐슨</div>
-        <ul class="career-dept"><li>미디어사업본부</li></ul>
-      </div>
-
-      <div class="career-item">
-        <div class="career-period">2003.03 ~ 2012.08</div>
-        <div class="career-company">LG유플러스 <span class="career-note">(구 LG텔레콤)</span></div>
-        <ul class="career-dept">
-          <li>마케팅조사팀</li>
-          <li>CRM분석팀</li>
-          <li>고객분석팀</li>
-        </ul>
-      </div>
-
-      <div class="career-item">
-        <div class="career-period">2012.09 ~ 현재</div>
-        <div class="career-company">호텔신라</div>
-        <ul class="career-dept">
-          <li>면세유통사업부 마케팅전략기획그룹</li>
-          <li>HDC신라면세점 마케팅전략팀</li>
-          <li>TR&nbsp;영업마케팅기획그룹</li>
-          <li>TR&nbsp;타겟마케팅그룹</li>
-          <li>TR&nbsp;인천공항점(마케팅)</li>
-        </ul>
+    <!-- Projects -->
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">§ 01 — Projects</div>
+        <h2 class="section-title">여섯 개의 작은 도구</h2>
       </div>
     </div>
-  </div>
+    <section class="project-list">
+      <a class="card project-row" href="https://jhawk-etf-dashboard.streamlit.app" target="_blank" rel="noopener">
+        <span class="proj-icon">📈</span>
+        <span class="proj-body">
+          <span class="proj-meta"><span class="proj-idx">01</span><span class="proj-tag">DASHBOARD</span></span>
+          <span class="proj-title">ETF 투자 대시보드</span>
+          <span class="proj-sub">한국 ETF 조회 · 시뮬레이션 · 비교 차트</span>
+        </span>
+        <span class="proj-chev" aria-hidden="true">›</span>
+      </a>
+      <a class="card project-row" href="https://lottery-number-generator.onrender.com/" target="_blank" rel="noopener">
+        <span class="proj-icon">🎰</span>
+        <span class="proj-body">
+          <span class="proj-meta"><span class="proj-idx">02</span><span class="proj-tag">TOOL</span></span>
+          <span class="proj-title">통계 기반 복권번호 생성기</span>
+          <span class="proj-sub">로또 · 연금복권</span>
+        </span>
+        <span class="proj-chev" aria-hidden="true">›</span>
+      </a>
+      <a class="card project-row" href="https://saju-fortune.onrender.com/" target="_blank" rel="noopener">
+        <span class="proj-icon">🔮</span>
+        <span class="proj-body">
+          <span class="proj-meta"><span class="proj-idx">03</span><span class="proj-tag">AI</span></span>
+          <span class="proj-title">AI 사주팔자</span>
+          <span class="proj-sub">정통 만세력 + 진태양시 보정 · AI 친절 해석</span>
+        </span>
+        <span class="proj-chev" aria-hidden="true">›</span>
+      </a>
+      <a class="card project-row" href="https://jhawk-edm-dj.netlify.app" target="_blank" rel="noopener">
+        <span class="proj-icon">🎧</span>
+        <span class="proj-body">
+          <span class="proj-meta"><span class="proj-idx">04</span><span class="proj-tag">PLAY</span></span>
+          <span class="proj-title">EDM DJ Console</span>
+          <span class="proj-sub">Claude Code와 만든 EDM · DJ 체험</span>
+        </span>
+        <span class="proj-chev" aria-hidden="true">›</span>
+      </a>
+      <a class="card project-row" href="https://shilla-icn-mkt.netlify.app/" target="_blank" rel="noopener">
+        <span class="proj-icon">🛍️</span>
+        <span class="proj-body">
+          <span class="proj-meta"><span class="proj-idx">05</span><span class="proj-tag">WORK</span></span>
+          <span class="proj-title">I'M PROJECT <span class="proj-lock" aria-label="비공개">🔒</span></span>
+          <span class="proj-sub">[Classified]</span>
+        </span>
+        <span class="proj-chev" aria-hidden="true">›</span>
+      </a>
+      <a class="card project-row" href="https://jhawk-east-europe-tour.netlify.app" target="_blank" rel="noopener">
+        <span class="proj-icon">✈️</span>
+        <span class="proj-body">
+          <span class="proj-meta"><span class="proj-idx">06</span><span class="proj-tag">FAMILY</span></span>
+          <span class="proj-title">동유럽 여행 코스 <span class="proj-lock" aria-label="비공개">🔒</span></span>
+          <span class="proj-sub">헝가리 · 오스트리아 · 체코</span>
+        </span>
+        <span class="proj-chev" aria-hidden="true">›</span>
+      </a>
+    </section>
+
+    <!-- History -->
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">§ 02 — History</div>
+        <h2 class="section-title">거쳐온 길</h2>
+      </div>
+      <span class="eyebrow">91 — 26</span>
+    </div>
+    <section class="card timeline-card">
+      <ol class="timeline">
+        <li class="t-row">
+          <span class="t-dot"></span>
+          <div class="t-range">1991.03 — 1997.02</div>
+          <div class="t-org">성균관대학교</div>
+          <div class="t-role">사회학과 (학사)</div>
+        </li>
+        <li class="t-row">
+          <span class="t-dot"></span>
+          <div class="t-range">1997.03 — 1999.08</div>
+          <div class="t-org">성균관대학교</div>
+          <div class="t-role">사회학과 (석사)</div>
+        </li>
+        <li class="t-row">
+          <span class="t-dot"></span>
+          <div class="t-range">1999.08 — 2000.07</div>
+          <div class="t-org">현대리서치</div>
+          <div class="t-role">사회여론조사팀</div>
+        </li>
+        <li class="t-row">
+          <span class="t-dot"></span>
+          <div class="t-range">2000.07 — 2001.05</div>
+          <div class="t-org">중앙리서치</div>
+          <div class="t-role">마케팅리서치팀</div>
+        </li>
+        <li class="t-row">
+          <span class="t-dot"></span>
+          <div class="t-range">2001.05 — 2003.02</div>
+          <div class="t-org">AC닐슨</div>
+          <div class="t-role">미디어사업본부</div>
+        </li>
+        <li class="t-row">
+          <span class="t-dot"></span>
+          <div class="t-range">2003.03 — 2012.08</div>
+          <div class="t-org">LG유플러스 <span class="t-org-note">(구 LG텔레콤)</span></div>
+          <ul class="t-role-list">
+            <li>마케팅조사팀</li>
+            <li>CRM분석팀</li>
+            <li>고객분석팀</li>
+          </ul>
+        </li>
+        <li class="t-row t-row-current">
+          <span class="t-dot"></span>
+          <div class="t-range">2012.09 — 현재</div>
+          <div class="t-org">호텔신라</div>
+          <ul class="t-role-list">
+            <li>면세유통사업부 마케팅전략기획그룹</li>
+            <li>HDC신라면세점 마케팅전략팀</li>
+            <li>TR 영업마케팅기획그룹</li>
+            <li>TR 타겟마케팅그룹</li>
+            <li>TR 인천공항점(마케팅)</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Songs -->
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">§ 03 — Favorites</div>
+        <h2 class="section-title">좋아하는 노래</h2>
+      </div>
+      <span class="songs-emoji" aria-hidden="true">🎵</span>
+    </div>
+    <section class="card songs">
+      <a class="song-row" href="https://www.youtube.com/watch?v=U4nToho9Ot8" target="_blank" rel="noopener">
+        <span class="song-meta"><span class="song-idx">01</span><span class="song-title">그건 니 생각이고</span></span>
+        <span class="song-chev" aria-hidden="true">↗</span>
+      </a>
+      <a class="song-row" href="https://www.youtube.com/watch?v=aHhACNlwHgE" target="_blank" rel="noopener">
+        <span class="song-meta"><span class="song-idx">02</span><span class="song-title">거절할 거야</span></span>
+        <span class="song-chev" aria-hidden="true">↗</span>
+      </a>
+      <a class="song-row" href="https://www.youtube.com/watch?v=AxPlLEpt42w" target="_blank" rel="noopener">
+        <span class="song-meta"><span class="song-idx">03</span><span class="song-title">할건지말건지</span></span>
+        <span class="song-chev" aria-hidden="true">↗</span>
+      </a>
+    </section>
+
+    <!-- Colophon -->
+    <section class="card card-dark colophon">
+      <p class="colophon-body">
+        이 페이지는 <span class="accent">Claude Code</span>와 함께 만들었습니다.
+      </p>
+      <div class="colophon-foot">
+        <span class="eyebrow eyebrow-on-dark">
+          <span id="visitor-count" aria-live="polite" aria-atomic="true">—</span> visitors
+        </span>
+        <span class="version">v.2026.05</span>
+      </div>
+    </section>
+
+  </main>
 
   <script data-goatcounter="https://jongho1972.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
@@ -175,51 +236,6 @@
         document.getElementById('visitor-count').textContent = Number(d.count).toLocaleString();
       })
       .catch(() => {});
-
-    let lastFocusedBeforeModal = null;
-    function openCareer() {
-      const modal = document.getElementById('careerModal');
-      const trigger = document.querySelector('.career-link');
-      lastFocusedBeforeModal = document.activeElement;
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      if (trigger) trigger.setAttribute('aria-expanded', 'true');
-      const firstFocusable = modal.querySelector('.career-modal-close');
-      if (firstFocusable) firstFocusable.focus();
-    }
-    function closeCareer(e) {
-      if (e && e.target !== e.currentTarget) return;
-      const modal = document.getElementById('careerModal');
-      const trigger = document.querySelector('.career-link');
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      if (trigger) trigger.setAttribute('aria-expanded', 'false');
-      if (lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === 'function') {
-        lastFocusedBeforeModal.focus();
-      }
-    }
-
-    function trapFocus(e, modal) {
-      const focusables = modal.querySelectorAll('button, a[href], input:not([type="hidden"]), [tabindex]:not([tabindex="-1"])');
-      if (focusables.length === 0) return;
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-    document.addEventListener('keydown', function(e) {
-      const careerModal = document.getElementById('careerModal');
-      const careerOpen = careerModal && careerModal.classList.contains('is-open');
-      if (e.key === 'Escape' && careerOpen) { closeCareer(); return; }
-      if (e.key === 'Tab' && careerOpen) trapFocus(e, careerModal);
-    });
   </script>
 
 </body>

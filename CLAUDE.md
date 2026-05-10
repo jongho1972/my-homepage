@@ -4,7 +4,7 @@
 
 ## 프로젝트 개요
 
-이종호(J.Hawk)의 정적 개인 홈페이지입니다. 빌드 시스템, 의존성, 패키지 매니저 없이 순수 HTML, CSS, 이미지 파일로만 구성되어 있습니다.
+이종호(J-Hawk)의 정적 개인 홈페이지입니다. 빌드 시스템·의존성·패키지 매니저 없이 순수 HTML, CSS, 이미지 파일로만 구성되어 있습니다. 외부 폰트 로드 없이 SF 시스템 폰트를 사용합니다.
 
 ## 배포
 
@@ -20,32 +20,55 @@
 python3 -m http.server 8000
 ```
 
+## 디자인
+
+- 단일 컬럼 macOS 톤 (max-width 560px frame, 좌우 미세 그림자, 모바일에서는 풀폭)
+- 핵심 토큰: `--bg #f5f5f7` / `--surface #fff` / `--ink #1d1d1f` / `--accent #0071e3` (Apple 블루)
+- 카드 radius 16, 알약 999, 그림자는 절제 (`0 1px 2px rgba(0,0,0,.04)`)
+- Eyebrow: 모노 10–11px / letter-spacing 0.14em / uppercase / muted
+- Hero / Colophon 두 카드만 다크 (`--ink` 배경)
+- 인터랙션은 0.18s ease로 통일, 프로젝트 카드만 hover 시 살짝 떠오름 (`translateY(-2px)`)
+- 디자인 레퍼런스 원본은 `design_handoff_jhawk_homepage/` (README.md · `homepage-b-mobile.jsx` · `data.js`)
+
 ## 구조
 
 파일 구성:
 
-- `index.html` — 단일 섹션: 전체 뷰포트 프로필 카드(`.container`)
-- `index.css` — 모든 스타일; Google Fonts(JetBrains Mono) 사용; 프레임워크 없음
-- `jh.jpg` — 프로필 사진, 파비콘으로도 사용
+- `index.html` — 단일 컬럼 모듈러 카드 페이지 (`.frame` 안에 7개 섹션)
+- `index.css` — 모든 스타일 (CSS 변수로 토큰화); 외부 폰트 의존 없음; 프레임워크 없음
+- `jh.jpg` — 프로필 사진(파비콘 폴백)
+- `favicon.svg` — 기본 파비콘
+- `design_handoff_jhawk_homepage/` — 리디자인 핸드오프 자료 (참고용, 배포 무관)
 - `README.md` — 프로젝트 소개 (GitHub 표시용)
 - `.gitignore` — `preview_macos.html` 제외
 
-프로필 섹션 구성 (위에서 아래 순서):
-- 프로필 사진 (`.profile_pic`)
-- 이름: Jongho Lee, 닉네임: [J-Hawk]
-- 이메일 링크: jongho1972@gmail.com
-- Instagram 링크 (`.instagram-link`): 이메일 바로 아래, 작은 favicon + `@jongho1972` 텍스트, `https://www.instagram.com/jongho1972/?hl=ko` 새 창 오픈
-- 외부 프로젝트 버튼 (모두 현재 창에서 열림, `target="_blank"` 없음):
-  - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드
-  - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 (로또 · 연금복권)
-  - `https://saju-fortune.onrender.com/` — AI 사주팔자 (생년월일시로 보는 나의 사주)
-  - `https://jhawk-edm-dj.netlify.app` — EDM DJ Console (Claude Code와 만든 EDM · DJ 체험)
-  - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 [가족 Only / On Hold] (목적지 페이지에 자체 비밀번호 게이트 `0000`)
-  - `https://shilla-icn-mkt.netlify.app/` — **I'm project** (Incheon Marketing Project 랜딩, 비번 無) — EDM DJ Console 바로 다음 위치. 랜딩에서 하위 메뉴(월별 프로모션·출발 항공편·관광통계) 분기, 하위 페이지는 각자 비번 게이트 유지
-- 비밀번호 보호 표시: 비밀번호가 필요한 링크(동유럽)는 `.travel-btn-chevron` 위치에 🔒 아이콘 표시. 실제 인증은 목적지 페이지에서 수행(홈페이지는 직접 네비게이트). I'm project는 랜딩이 공개라 ›로 표시.
-- Personal History 모달: 이메일 아래 `.career-link` 버튼 → `#careerModal` 팝업. 학력(성균관대 학사/석사) + 경력(현대리서치~호텔신라) 타임라인 표시. `openCareer()`/`closeCareer()` 함수, ESC·배경 클릭·X 버튼으로 닫힘.
-- 방문자 카운터 (`.visitor-counter`):
-  - GoatCounter 트래킹: `https://jongho1972.goatcounter.com`
-  - 카운터 표시: `fetch('https://jongho1972.goatcounter.com/counter/%2F.json')` → `d.count` 표시
-  - GoatCounter Settings에서 "Allow adding visitor counts on your website" 체크 필요 (CORS 허용)
-- 하단 푸터 (`.site-footer`): `.profile` 카드 아래, "Built with Claude Code by 이종호 (jongho1972@gmail.com)" 표기. border-top + 중앙정렬, 회색 톤
+`.frame` 내부 섹션 순서 (위에서 아래):
+
+1. **Header** (`.page-header`) — 좌: `JH` 로고 박스 + `J-HAWK` 모노 라벨 / 우: `Seoul, KR`
+2. **Hero** (`.card.card-dark.hero`) — Eyebrow `Hello — 안녕하세요` + H1 `이종호 / J-Hawk.`(`.accent`만 블루) + 한 줄 소개 + 알약 버튼 2개
+   - 이메일: `mailto:jongho1972@gmail.com` (반투명 흰 배경)
+   - Instagram: `https://www.instagram.com/jongho1972/?hl=ko` 새 창 (액센트 블루 배경)
+3. **Quick Stats** (`.stats`, 2×2) — Projects 06 / Years 25+ / Visitors / Now (TR.MKT)
+4. **Projects** (`.project-list`) — 6개 카드 행, 각 행 `.project-row`: 이모지 박스 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 새 창 (`target="_blank"`).
+   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드 · DASHBOARD
+   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 · TOOL
+   - `https://saju-fortune.onrender.com/` — AI 사주팔자 · AI
+   - `https://jhawk-edm-dj.netlify.app` — EDM DJ Console · PLAY
+   - `https://shilla-icn-mkt.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
+   - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (목적지 페이지에 자체 비번 게이트 `0000`)
+   - 비공개 표기는 타이틀 옆 작은 🔒 (`.proj-lock`)
+5. **History** (`.timeline-card`) — 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
+6. **On repeat** (`.songs`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`)
+7. **Colophon** (`.card.card-dark.colophon`) — `Built with Claude Code` + 버전 라벨 (`v.YYYY.MM`)
+
+## 방문자 카운터
+
+- GoatCounter 트래킹: `https://jongho1972.goatcounter.com`
+- 카운트 표시: `fetch('https://jongho1972.goatcounter.com/counter/%2F.json')` → `#visitor-count`(Quick Stats의 Visitors 카드)에 `toLocaleString()`로 주입
+- GoatCounter Settings → "Allow adding visitor counts on your website" 체크 필요 (CORS 허용). 로컬에서는 `localhost @` 경고로 카운트되지 않는 게 정상.
+
+## 변경 시 주의
+
+- 데스크탑/모바일 양쪽 폭에서 깨짐 없이 동작해야 함 (단일 브레이크포인트 `max-width: 600px`만 사용)
+- 외부 프로젝트의 추가/제거가 발생하면 워크스페이스 루트 `CLAUDE.md` 표와 동기화 (홈페이지 동기화 원칙)
+- 새 콘텐츠 추가 시에도 `--accent`는 강조 1~2곳에만 절제 사용. 다른 컬러로 흩뜨리지 말 것.
