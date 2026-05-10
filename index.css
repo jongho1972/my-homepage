@@ -67,24 +67,6 @@ a { color: inherit; text-decoration: none; }
   .frame { box-shadow: none; }
 }
 
-/* desktop-only side note */
-.desk-note {
-  position: fixed;
-  left: 24px;
-  bottom: 24px;
-  z-index: 5;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(29, 29, 31, 0.5);
-  max-width: 220px;
-  line-height: 1.6;
-}
-@media (max-width: 900px) {
-  .desk-note { display: none; }
-}
-
 /* ── Eyebrow / common ── */
 .eyebrow {
   font-family: var(--font-mono);
