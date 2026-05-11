@@ -296,6 +296,9 @@ a { color: inherit; text-decoration: none; }
   margin-top: 1px;
   line-height: 1.4;
 }
+.proj-sub-alert {
+  color: #d70015;
+}
 .proj-chev {
   font-size: 18px;
   color: var(--muted);
