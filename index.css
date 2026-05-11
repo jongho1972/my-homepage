@@ -438,6 +438,17 @@ a { color: inherit; text-decoration: none; }
   color: var(--accent);
 }
 
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .hero-actions { flex-wrap: nowrap; gap: 8px; }
+  .pill {
+    padding: 8px 12px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .pill-icon { width: 14px; height: 14px; }
+}
+
 /* ── Motion preferences ── */
 @media (prefers-reduced-motion: reduce) {
   .pill,
