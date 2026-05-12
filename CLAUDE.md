@@ -48,7 +48,7 @@ python3 -m http.server 8000
 `.frame` 내부 섹션 순서 (위에서 아래):
 
 1. **Header** (`.page-header`) — 좌: `JH` 로고 박스 + `J-HAWK` 모노 라벨 / 우: `Seoul, KR`
-2. **Hero** (`.card.card-dark.hero`) — Eyebrow `Hello — 안녕하세요` + H1 `이종호 / J-Hawk`(`.accent`만 블루) + 우측에 한 줄 소개(`"GD는 G-Dragon, JH는 J-Hawk"`) flex baseline 정렬 + 알약 버튼 2개 (콘텐츠 폭, 이메일 주소가 잘리지 않게 표시)
+2. **Hero** (`.card.card-dark.hero`) — H1 `이종호 / J-Hawk`(`.accent`만 블루) + 우측에 한 줄 소개(`"GD는 G-Dragon, JH는 J-Hawk"`) flex baseline 정렬 + 알약 버튼 2개 (콘텐츠 폭, 이메일 주소가 잘리지 않게 표시)
    - 이메일: `mailto:jongho1972@gmail.com` (흰 배경 + Gmail 멀티컬러 봉투 SVG)
    - Instagram: `https://www.instagram.com/jongho1972/?hl=ko` (Instagram 옐로→핑크→퍼플 그라데이션)
 3. **Projects** (`§ 01 — Projects / 여섯 개의 작은 도구`) — 6개 카드 행 (`.project-row`): 이모지 박스 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
