@@ -379,6 +379,30 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   color: var(--muted);
 }
+.t-thesis {
+  margin-top: 6px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.t-thesis-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 6px;
+}
+.t-thesis a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+.t-thesis a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
 
 /* ── Songs ── */
 .songs {
