@@ -52,6 +52,8 @@ python3 -m http.server 8000
    - 이메일: `mailto:jongho1972@gmail.com` (흰 배경 + Gmail 멀티컬러 봉투 SVG)
    - Instagram: `https://www.instagram.com/jongho1972/?hl=ko` (Instagram 옐로→핑크→퍼플 그라데이션)
 3. **Projects** (`§ 01 — Projects / 여섯 개의 작은 도구`) — 6개 카드 행 (`.project-row`): 이모지 박스 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
+   - 활성 4개(MONEY·LOTTERY·FORTUNE·MUSIC)에 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 펄스 애니메이션) + 액센트 블루 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`). 모바일은 라이브 점·블루 chevron만 노출(호버 없음).
+   - 비공개 2개(WORK·TRAVEL)는 라이브 점 없음, muted chevron 유지.
    - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드 · DASHBOARD
    - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 · TOOL
    - `https://saju-fortune.onrender.com/` — AI 사주팔자 · AI
@@ -62,7 +64,7 @@ python3 -m http.server 8000
    - 프로젝트 이모지(`.proj-icon`)는 `aria-hidden="true"` (스크린리더 중복 방지)
 4. **History** (`§ 02 — History / 거쳐온 길`) — `.timeline-card` 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
    - LG유플러스 · 호텔신라는 `.t-role-list`로 부서 다중 표기 (모노 미들닷 prefix)
-5. **Favorites** (`§ 03 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`)
+5. **Favorites** (`§ 03 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 곡 타이틀 옆 YouTube 레드 점(`.song-live`) + 우측 ↗ 화살표(`.song-chev`)도 YouTube 레드(`#FF0033`)로 강조해 외부 영상 링크임을 표시.
 6. **Colophon** (`.card.card-dark.colophon`) — `이 페이지는 Claude Code와 함께 만들었습니다.` + 푸터 (좌: `269 visitors` / 우: `v.YYYY.MM`)
 
 ## 방문자 카운터
