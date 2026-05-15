@@ -2,7 +2,7 @@
 
 이종호(J-Hawk)의 개인 홈페이지입니다.
 
-**배포 URL**: https://j-hawk.netlify.app
+**배포 URL**: https://j-hawk.kr
 
 ## 소개
 

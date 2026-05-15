@@ -9,7 +9,7 @@
 ## 배포
 
 - **저장소**: https://github.com/jongho1972/my-homepage
-- **서비스 URL**: https://j-hawk.netlify.app
+- **서비스 URL**: https://j-hawk.kr
 - GitHub `main` 브랜치 푸시 시 Netlify 자동 배포
 
 ## 개발 방법
