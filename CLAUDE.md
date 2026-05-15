@@ -54,7 +54,7 @@ python3 -m http.server 8000
 3. **Projects** (`§ 01 — Projects / 여섯 개의 작은 도구`) — 6개 카드 행 (`.project-row`): 이모지 박스 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
    - 활성 4개(MONEY·LOTTERY·FORTUNE·MUSIC)에 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 펄스 애니메이션) + 액센트 블루 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`). 모바일은 라이브 점·블루 chevron만 노출(호버 없음).
    - 비공개 2개(WORK·TRAVEL)는 라이브 점 없음, muted chevron 유지.
-   - `https://jhawk-etf-dashboard.streamlit.app` — ETF 투자 대시보드 · DASHBOARD
+   - `https://etf.j-hawk.kr` — ETF 투자 대시보드 · DASHBOARD
    - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 · TOOL
    - `https://saju-fortune.onrender.com/` — AI 사주팔자 · AI
    - `https://jhawk-edm-dj.netlify.app` — EDM DJ Console · PLAY
