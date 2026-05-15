@@ -64,7 +64,7 @@ python3 -m http.server 8000
    - 프로젝트 이모지(`.proj-icon`)는 `aria-hidden="true"` (스크린리더 중복 방지)
 4. **History** (`§ 02 — History / 거쳐온 길`) — `.timeline-card` 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
    - LG유플러스 · 호텔신라는 `.t-role-list`로 부서 다중 표기 (모노 미들닷 prefix)
-5. **Favorites** (`§ 03 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 곡 타이틀 옆 YouTube 레드 점(`.song-live`) + 우측 ↗ 화살표(`.song-chev`)도 YouTube 레드(`#FF0033`)로 강조해 외부 영상 링크임을 표시.
+5. **Favorites** (`§ 03 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 곡 타이틀 옆 YouTube 레드 점(`.song-live`, 펄스 애니메이션) + 타이틀 아래 `▶ YOUTUBE` 라벨(`.song-source`) + 우측 ↗ 화살표(`.song-chev`)도 YouTube 레드(`#FF0033`). 모바일(`max-width: 600px`)에서는 chev가 34px 빨간 원형 버튼으로 변환되어 탭 어포던스 강화.
 6. **Colophon** (`.card.card-dark.colophon`) — `이 페이지는 Claude Code와 함께 만들었습니다.` + 푸터 (좌: `269 visitors` / 우: `v.YYYY.MM`)
 
 ## 방문자 카운터
