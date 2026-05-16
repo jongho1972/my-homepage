@@ -57,14 +57,14 @@ python3 -m http.server 8000
    - `https://etf.j-hawk.kr` — ETF 투자 대시보드 · DASHBOARD
    - `https://lottery.j-hawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
    - `https://fortune.j-hawk.kr/` — AI 사주팔자 · AI
-   - `https://jhawk-edm-dj.netlify.app` — EDM DJ Console · PLAY
-   - `https://shilla-icn-mkt.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
+   - `https://edm-jahwk.netlify.app` — EDM DJ Console · PLAY
+   - `https://shilla-jhawk.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
    - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (목적지 페이지에 자체 비번 게이트 `0000`)
    - 비공개 표기는 타이틀 옆 작은 🔒 (`.proj-lock`)
    - 프로젝트 이모지(`.proj-icon`)는 `aria-hidden="true"` (스크린리더 중복 방지)
 4. **History** (`§ 02 — History / 거쳐온 길`) — `.timeline-card` 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
    - LG유플러스 · 호텔신라는 `.t-role-list`로 부서 다중 표기 (모노 미들닷 prefix)
-5. **Favorites** (`§ 03 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 곡 타이틀 옆 YouTube 레드 점(`.song-live`, 펄스 애니메이션) + 우측에 `▶ YOUTUBE` 라벨(`.song-source`, 모노 10px 빨강). 모바일(`max-width: 600px`)에서는 라벨이 빨간 알약 버튼으로 변환되어 탭 어포던스 강화.
+5. **Favorites** (`§ 03 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 곡 타이틀 옆 YouTube 레드 점(`.song-live`, 펄스 애니메이션) + 우측에 `▶ YOUTUBE` 라벨(`.song-source`, 모노 10px 빨강). 모바일(`max-width: 600px`)에서는 라벨이 빨간 알약 버튼으로 변환되어 탭 어포던스 강화. 모든 노래 링크는 `target="_blank" rel="noopener noreferrer"`로 새 탭에서 열림 (홈페이지 이탈 방지).
 6. **Colophon** (`.card.card-dark.colophon`) — `이 페이지는 Claude Code와 함께 만들었습니다.` + 푸터 (좌: `269 visitors` / 우: `v.YYYY.MM`)
 
 ## 방문자 카운터
