@@ -55,8 +55,8 @@ python3 -m http.server 8000
    - 활성 4개(MONEY·LOTTERY·FORTUNE·MUSIC)에 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 펄스 애니메이션) + 액센트 블루 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`). 모바일은 라이브 점·블루 chevron만 노출(호버 없음).
    - 비공개 2개(WORK·TRAVEL)는 라이브 점 없음, muted chevron 유지.
    - `https://etf.j-hawk.kr` — ETF 투자 대시보드 · DASHBOARD
-   - `https://lottery-number-generator.onrender.com/` — 통계 기반 복권번호 생성기 · TOOL
-   - `https://saju-fortune.onrender.com/` — AI 사주팔자 · AI
+   - `https://lottery.j-hawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
+   - `https://fortune.j-hawk.kr/` — AI 사주팔자 · AI
    - `https://jhawk-edm-dj.netlify.app` — EDM DJ Console · PLAY
    - `https://shilla-icn-mkt.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
    - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (목적지 페이지에 자체 비번 게이트 `0000`)
