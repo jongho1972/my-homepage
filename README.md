@@ -17,7 +17,7 @@
 | AI 사주팔자 | https://saju-fortune.onrender.com |
 | EDM DJ Console | https://edm-jahwk.netlify.app |
 | I'm project (Classified) | https://shilla-jhawk.netlify.app |
-| 동유럽 여행 코스 (가족 Only / On Hold) | https://jhawk-east-europe-tour.netlify.app |
+| 동유럽 여행 코스 (가족 Only / On Hold) | https://tour-europe-jhawk.netlify.app |
 
 ## 기술 스택
 

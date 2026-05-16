@@ -59,7 +59,7 @@ python3 -m http.server 8000
    - `https://fortune.j-hawk.kr/` — AI 사주팔자 · AI
    - `https://edm-jahwk.netlify.app` — EDM DJ Console · PLAY
    - `https://shilla-jhawk.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
-   - `https://jhawk-east-europe-tour.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (목적지 페이지에 자체 비번 게이트 `0000`)
+   - `https://tour-europe-jhawk.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (목적지 페이지에 자체 비번 게이트 `0000`)
    - 비공개 표기는 타이틀 옆 작은 🔒 (`.proj-lock`)
    - 프로젝트 이모지(`.proj-icon`)는 `aria-hidden="true"` (스크린리더 중복 방지)
 4. **History** (`§ 02 — History / 거쳐온 길`) — `.timeline-card` 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
