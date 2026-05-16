@@ -12,7 +12,7 @@
 
 | 프로젝트 | URL |
 |----------|-----|
-| ETF 투자 대시보드 | https://etf.j-hawk.kr |
+| ETF 투자 가이드 | https://etf.j-hawk.kr |
 | 통계 기반 복권번호 생성기 | https://lottery-number-generator.onrender.com |
 | AI 사주팔자 | https://saju-fortune.onrender.com |
 | EDM DJ Console | https://edm-jahwk.netlify.app |
