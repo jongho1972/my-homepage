@@ -2,7 +2,7 @@
 
 이종호(J-Hawk)의 개인 홈페이지입니다.
 
-**배포 URL**: https://j-hawk.kr
+**배포 URL**: https://jhawk.kr
 
 ## 소개
 
@@ -12,7 +12,7 @@
 
 | 프로젝트 | URL |
 |----------|-----|
-| ETF 투자 가이드 | https://etf.j-hawk.kr |
+| ETF 투자 가이드 | https://etf.jhawk.kr |
 | 통계 기반 복권번호 생성기 | https://lottery-number-generator.onrender.com |
 | AI 사주팔자 | https://saju-fortune.onrender.com |
 | EDM DJ Console | https://edm-jahwk.netlify.app |

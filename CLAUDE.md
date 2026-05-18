@@ -9,7 +9,7 @@
 ## 배포
 
 - **저장소**: https://github.com/jongho1972/my-homepage
-- **서비스 URL**: https://j-hawk.kr
+- **서비스 URL**: https://jhawk.kr
 - GitHub `main` 브랜치 푸시 시 Netlify 자동 배포
 
 ## 개발 방법
@@ -54,9 +54,9 @@ python3 -m http.server 8000
 3. **Projects** (`§ 01 — Projects / 여섯 개의 작은 도구`) — 6개 카드 행 (`.project-row`): 이모지 박스 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
    - 활성 4개(MONEY·LOTTERY·FORTUNE·MUSIC)에 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 펄스 애니메이션) + 액센트 블루 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`). 모바일은 라이브 점·블루 chevron만 노출(호버 없음).
    - 비공개 2개(WORK·TRAVEL)는 라이브 점 없음, muted chevron 유지.
-   - `https://etf.j-hawk.kr` — ETF 투자 가이드 · GUIDE
-   - `https://lottery.j-hawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
-   - `https://fortune.j-hawk.kr/` — AI 사주팔자 · AI
+   - `https://etf.jhawk.kr` — ETF 투자 가이드 · GUIDE
+   - `https://lottery.jhawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
+   - `https://fortune.jhawk.kr/` — AI 사주팔자 · AI
    - `https://edm-jahwk.netlify.app` — EDM DJ Console · PLAY
    - `https://shilla-jhawk.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
    - `https://tour-europe-jhawk.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (목적지 페이지에 자체 비번 게이트 `0000`)
