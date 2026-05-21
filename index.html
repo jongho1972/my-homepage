@@ -252,7 +252,7 @@
         <span class="eyebrow eyebrow-on-dark">
           <span id="visitor-count" aria-live="polite" aria-atomic="true">—</span> visitors
         </span>
-        <span class="version">v.2026.05</span>
+        <span class="version" id="version">v.2026.05</span>
       </div>
     </section>
 
@@ -267,6 +267,13 @@
         document.getElementById('visitor-count').textContent = Number(d.count).toLocaleString();
       })
       .catch(() => {});
+
+    // 버전 라벨: 페이지를 보는 현재 연·월로 자동 갱신 (v.YYYY.MM)
+    (function () {
+      var now = new Date();
+      var mm = String(now.getMonth() + 1).padStart(2, '0');
+      document.getElementById('version').textContent = 'v.' + now.getFullYear() + '.' + mm;
+    })();
   </script>
 
 </body>

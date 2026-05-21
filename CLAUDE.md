@@ -67,6 +67,7 @@ python3 -m http.server 8000
 5. **Certifications** (`§ 03 — Certifications / 국가전문자격증`) — `.timeline-card` 재활용. 손해평가사(자격증번호 2207226, 2022-11-23) 1행. 자격증명은 `.t-org-link` 클래스로 Q-Net 상세 페이지 새 탭 링크. 점은 액센트 블루(`.t-row-current`).
 6. **Favorites** (`§ 04 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 곡 타이틀 옆 YouTube 레드 점(`.song-live`, 펄스 애니메이션) + 우측에 `▶ YOUTUBE` 라벨(`.song-source`, 모노 10px 빨강). 모바일(`max-width: 600px`)에서는 라벨이 빨간 알약 버튼으로 변환되어 탭 어포던스 강화. 모든 노래 링크는 `target="_blank" rel="noopener noreferrer"`로 새 탭에서 열림 (홈페이지 이탈 방지).
 7. **Colophon** (`.card.card-dark.colophon`) — `이 페이지는 Claude Code와 함께 만들었습니다.` + 푸터 (좌: `269 visitors` / 우: `v.YYYY.MM`)
+   - 버전 라벨(`#version`)은 하드코딩이 아니라 인라인 JS가 방문 시점의 `new Date()`로 `v.YYYY.MM`을 주입(현재 월 자동 갱신). HTML의 값은 JS 미동작 시 폴백일 뿐이므로 수동 갱신 불필요.
 
 ## 방문자 카운터
 
