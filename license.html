@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#1d1d1f">
+  <meta name="robots" content="noindex">
+  <title>손해평가사 자격증 · J-Hawk</title>
+  <link href="favicon.svg" rel="icon" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #1d1d1f;
+      --muted: #86868b;
+      --line: rgba(255, 255, 255, .14);
+      --accent: #2997ff;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #f5f5f7;
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
+      min-height: 100svh;
+    }
+
+    .viewer-back {
+      position: fixed;
+      top: calc(14px + env(safe-area-inset-top));
+      left: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      transition: color .18s ease, border-color .18s ease;
+    }
+    .viewer-back:hover { color: #f5f5f7; border-color: rgba(255, 255, 255, .3); }
+
+    .license-img {
+      max-width: min(380px, 86vw);
+      max-height: 78vh;
+      width: auto;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .55);
+      background: #fff;
+    }
+
+    .caption {
+      text-align: center;
+      line-height: 1.5;
+    }
+    .caption .title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+    }
+    .caption .sub {
+      margin-top: 2px;
+      font-size: 11px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .02em;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="viewer-back" href="/">← jhawk.kr</a>
+
+  <img class="license-img" src="license-adjuster.jpg?v=20260523c"
+       alt="농업재해보험 손해평가사 자격증 — 제 22-0726호, 이종호">
+
+  <div class="caption">
+    <div class="title">농업재해보험 손해평가사 자격증</div>
+    <div class="sub">제 22-0726호 · 이종호</div>
+  </div>
+</body>
+
+</html>
