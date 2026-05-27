@@ -60,8 +60,10 @@ python3 -m http.server 8000
    - `https://etf.jhawk.kr` — ETF 투자 가이드 · GUIDE
    - `https://lottery.jhawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
    - `https://fortune.jhawk.kr/` — AI 사주팔자 · AI
+   - `https://sonkum.jhawk.kr/` — AI 손금풀이 · PALMISTRY (NEW 리본)
    - `https://edm-jahwk.netlify.app` — EDM DJ Console · PLAY
-   - `https://tour-europe-jhawk.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (목적지 페이지에 자체 비번 게이트 `0000`)
+   - `https://tour-jeolla-jhawk.netlify.app` — 전라도 서남해안 여행 🔒 · FAMILY (자체 비번 게이트 `0000`)
+   - `https://tour-europe-jhawk.netlify.app` — 동유럽 여행 코스 🔒 · FAMILY (자체 비번 게이트 `0000`)
    - `https://shilla-jhawk.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
    - 비공개 표기는 타이틀 옆 작은 🔒 (`.proj-lock`)
    - 프로젝트 이모지(`.proj-icon`)는 `aria-hidden="true"` (스크린리더 중복 방지)
