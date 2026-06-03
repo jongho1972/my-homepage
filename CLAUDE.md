@@ -10,7 +10,9 @@
 
 - **저장소**: https://github.com/jongho1972/my-homepage
 - **서비스 URL**: https://jhawk.kr
-- GitHub `main` 브랜치 푸시 시 Netlify 자동 배포
+- **실서빙**: j-hawk VPS Caddy가 `/srv/homepage`(= `deploy/docker-compose.yml`에서 `../my-homepage` git clone을 read-only 마운트)를 `file_server`로 직접 서빙
+- **배포 절차**: my-homepage `main` 푸시 → **VPS `/opt/j-hawk/my-homepage`에서 `git pull`**(또는 `git reset --hard origin/main`). 빌드·컨테이너 재시작 불필요, 파일 교체 즉시 반영
+- Netlify `j-hawk` 사이트(`j-hawk.netlify.app`)는 jhawk.kr로 **301 리디렉트만** 하는 스텁 — 실제 서빙 아님. Netlify 배포만으론 jhawk.kr이 갱신되지 않으니 주의
 
 ## 개발 방법
 
