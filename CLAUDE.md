@@ -64,7 +64,7 @@ python3 -m http.server 8000
    - `https://edm-jahwk.netlify.app` — EDM DJ Console · PLAY
    - `https://tour-jeolla-jhawk.netlify.app` — 호남 서남해안 여행 추천 코스 · TRAVEL (공개·라이브, 일반 추천 코스로 전환)
    - `https://tour-europe-jhawk.netlify.app` — 동유럽 여행 코스 · TRAVEL (공개·라이브, 일반 추천 코스로 전환 / 실제 여행 일정은 보류)
-   - `https://shilla-jhawk.netlify.app/` — I'M PROJECT 🔒 · WORK (랜딩은 공개, 하위 페이지는 자체 비번 게이트)
+   - `https://opendata-jhawk.netlify.app/` — 공개 데이터 활용 사례 · DATA (공개·라이브, 02번 위치. 인천공항·관광·면세 공개 데이터 대시보드)
    - 비공개 표기는 타이틀 옆 작은 🔒 (`.proj-lock`)
    - 프로젝트 이모지(`.proj-icon`)는 `aria-hidden="true"` (스크린리더 중복 방지)
 4. **History** (`§ 02 — History / 거쳐온 길`) — `.timeline-card` 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
