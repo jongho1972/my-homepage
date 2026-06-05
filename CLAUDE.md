@@ -62,7 +62,7 @@ python3 -m http.server 8000
    - `https://etf.jhawk.kr` — ETF 투자 가이드 · GUIDE
    - `https://lottery.jhawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
    - `https://fortune.jhawk.kr/` — AI 사주팔자 · AI
-   - `https://sonkum.jhawk.kr/` — AI 손금풀이 · PALMISTRY (NEW 리본)
+   - `https://sonkum.jhawk.kr/` — AI 손금풀이 · PALMISTRY
    - `https://edm-jahwk.netlify.app` — EDM DJ Console · PLAY
    - `https://tour-jeolla-jhawk.netlify.app` — 호남 서남해안 여행 추천 코스 · TRAVEL (공개·라이브, 일반 추천 코스로 전환)
    - `https://tour-europe-jhawk.netlify.app` — 동유럽 여행 코스 · TRAVEL (공개·라이브, 일반 추천 코스로 전환 / 실제 여행 일정은 보류)
