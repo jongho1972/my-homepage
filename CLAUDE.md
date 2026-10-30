@@ -24,13 +24,16 @@ python3 -m http.server 8000
 
 ## 디자인
 
-- 단일 컬럼 macOS 톤 (max-width 560px frame, 좌우 미세 그림자, 모바일에서는 풀폭)
-- 핵심 토큰: `--bg #f5f5f7` / `--surface #fff` / `--ink #1d1d1f` / `--accent #0071e3` (Apple 블루)
-- 카드 radius 16, 알약 999, 그림자는 절제 (`0 1px 2px rgba(0,0,0,.04)`)
-- Eyebrow: 모노 10–11px / letter-spacing 0.14em / uppercase / muted
-- Hero / Colophon 두 카드만 다크 (`--ink` 배경)
-- 인터랙션은 0.18s ease로 통일, 프로젝트 카드만 hover 시 살짝 떠오름 (`translateY(-2px)`)
-- 모션 접근성: `@media (prefers-reduced-motion: reduce)`에서 모든 transition/transform 비활성화
+2026-10-30 Apple 디자인 가이드(`../Design_MD/DESIGN-apple.md`) 기준으로 다듬음 (A안). 이전 macOS 톤(모노 10px 라벨·카드 그림자·브랜드 그라데이션)에서 전환.
+
+- 단일 컬럼 (max-width 560px frame, 좌우 1px 헤어라인, 모바일에서는 풀폭)
+- 핵심 토큰: `--bg #f5f5f7` / `--surface #fff` / `--ink #1d1d1f` / `--tile #272729`(히어로) / `--accent #0066cc` / `--accent-on-dark #2997ff`(다크 위 링크) / `--focus #0071e3`(포커스 링) / `--muted #7a7a7a` / `--rule #e0e0e0`
+- 타이포: 본문 17px·line-height 1.47·letter-spacing -0.374px, 제목 굵기 600(히어로 40px · 섹션 28px), 캡션 14px, 보조 라벨 12px. 모노 서체·10px 글씨 사용 안 함
+- 카드: 1px 헤어라인 + radius 18, **그림자 없음**. 알약 999
+- 강조색은 파랑 하나만. Instagram 그라데이션·YouTube 빨강 같은 브랜드 색 쓰지 않음
+- 다크는 Hero 카드 한 곳만. Colophon은 밝은 푸터(상단 헤어라인)
+- 인터랙션: 누를 때 `scale(0.95)`(알약) / `scale(0.98)`(프로젝트 행). hover로 떠오르는 효과 없음. 데스크탑 hover 시 `OPEN` 슬라이드인만 유지
+- 모션 접근성: `@media (prefers-reduced-motion: reduce)`에서 transition/transform 비활성화
 - 모바일 UX: `.pill / .project-row / .song-row`에 `touch-action: manipulation` (더블탭 줌 지연 제거)
 - 디자인 레퍼런스 원본은 `design_handoff_jhawk_homepage/` (gitignore, 로컬 보관)
 
@@ -52,13 +55,13 @@ python3 -m http.server 8000
 
 `.frame` 내부 섹션 순서 (위에서 아래):
 
-1. **Header** (`.page-header`) — 좌: `JH` 로고 박스 + `J-HAWK` 모노 라벨 / 우: `Seoul, KR`
+1. **Header** (`.page-header`) — 좌: `JH` 로고 박스 + `J-HAWK` 라벨 / 우: `Seoul, KR`
 2. **Hero** (`.card.card-dark.hero`) — H1 `이종호 / J-Hawk`(`.accent`만 블루) + 우측에 한 줄 소개(`"GD는 G-Dragon, JH는 J-Hawk"`) flex baseline 정렬 + 알약 버튼 2개 (콘텐츠 폭, 이메일 주소가 잘리지 않게 표시)
-   - Instagram: `https://www.instagram.com/jongho1972/?hl=ko` (Instagram 옐로→핑크→퍼플 그라데이션)
-   - 이메일: `mailto:jongho1972@gmail.com` (흰 배경 + Gmail 멀티컬러 봉투 SVG)
-3. **Projects** (`§ 01 — Projects / 여섯 개의 작은 도구`) — 6개 카드 행 (`.project-row`): 이모지 박스 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
-   - 활성 4개(MONEY·LOTTERY·FORTUNE·MUSIC)에 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 펄스 애니메이션) + 액센트 블루 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`). 모바일은 라이브 점·블루 chevron만 노출(호버 없음).
-   - 비공개 1개(WORK)는 라이브 점 없음, muted chevron 유지.
+   - 이메일(1번째): `mailto:jongho1972@gmail.com` (`.pill-primary` 파란 알약 + 단색 봉투 아이콘)
+   - Instagram(2번째): `https://www.instagram.com/jongho1972/?hl=ko` (`.pill-ghost` 테두리 알약, `#2997ff`)
+3. **Projects** (`프로젝트 / Claude Code로 만든 서비스`) — 9개 카드 행 (`.project-row`): 이모지 박스 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
+   - 9개 모두 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 정지된 파란 점) + 액센트 블루 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`). 모바일은 라이브 점·블루 chevron만 노출(호버 없음).
+   - 비공개 항목을 추가할 때는 `.project-row-live`를 빼면 라이브 점 없이 muted chevron으로 표시됨.
    - `https://etf.jhawk.kr` — ETF 투자 가이드 · GUIDE
    - `https://lottery.jhawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
    - `https://fortune.jhawk.kr/` — AI 사주팔자 · AI
@@ -69,12 +72,12 @@ python3 -m http.server 8000
    - `https://opendata-jhawk.netlify.app/` — 공개 데이터 활용 사례 · DATA (공개·라이브, 02번 위치. 인천공항·관광·면세 공개 데이터 대시보드)
    - 비공개 표기는 타이틀 옆 작은 🔒 (`.proj-lock`)
    - 프로젝트 이모지(`.proj-icon`)는 `aria-hidden="true"` (스크린리더 중복 방지)
-4. **History** (`§ 02 — History / 거쳐온 길`) — `.timeline-card` 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
-   - LG유플러스 · 호텔신라는 `.t-role-list`로 부서 다중 표기 (모노 미들닷 prefix)
-   - 학·석사 행의 `사회학과 (학사)`/`(석사)`는 `.t-role-doc` 클래스로 각 성적증명서 PDF에 새 탭 링크 (액센트 블루 밑줄, `.t-thesis a`와 동일 톤)
-5. **Certifications** (`§ 03 — Certifications / 국가전문자격증`) — `.timeline-card` 재활용. 손해평가사(자격증번호 2207226, 2022-11-23) 1행. 자격증명은 `.t-org-link` 클래스로 Q-Net 상세 페이지 새 탭 링크. 자격증번호(`2207226`)는 `.t-role-doc` 클래스로 자격증 이미지 뷰어(`license.html`) 새 탭 링크. 점은 액센트 블루(`.t-row-current`). ⚠️ 실물 카드 인쇄번호(`제 22-0726호`)와 표기 텍스트(`2207226`)가 다름 — 정정 여부 미확정
-6. **Favorites** (`§ 04 — Favorites / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 곡 타이틀 옆 YouTube 레드 점(`.song-live`, 펄스 애니메이션) + 우측에 `▶ YOUTUBE` 라벨(`.song-source`, 모노 10px 빨강). 모바일(`max-width: 600px`)에서는 라벨이 빨간 알약 버튼으로 변환되어 탭 어포던스 강화. 모든 노래 링크는 `target="_blank" rel="noopener noreferrer"`로 새 탭에서 열림 (홈페이지 이탈 방지).
-7. **Colophon** (`.card.card-dark.colophon`) — `이 페이지는 Claude Code와 함께 만들었습니다.` + 푸터 (좌: `269 visitors` / 우: `v.YYYY.MM`)
+4. **History** (`이력 / 거쳐온 길`) — `.timeline-card` 인라인 타임라인 7개 (성균관대 학·석사 + 5개 회사). 마지막 항목 `.t-row-current`만 점이 액센트 블루
+   - LG유플러스 · 호텔신라는 `.t-role-list`로 부서 다중 표기 (미들닷 prefix)
+   - 학·석사 행의 `사회학과 (학사)`/`(석사)`는 `.t-role-doc` 클래스로 각 성적증명서 PDF에 새 탭 링크 (액센트 블루, 밑줄은 데스크탑 hover 시에만. `.t-thesis a`와 동일 톤)
+5. **Certifications** (`자격 / 국가전문자격증`) — `.timeline-card` 재활용. 손해평가사(자격증번호 2207226, 2022-11-23) 1행. 자격증명은 `.t-org-link` 클래스로 Q-Net 상세 페이지 새 탭 링크. 자격증번호(`2207226`)는 `.t-role-doc` 클래스로 자격증 이미지 뷰어(`license.html`) 새 탭 링크. 점은 액센트 블루(`.t-row-current`). ⚠️ 실물 카드 인쇄번호(`제 22-0726호`)와 표기 텍스트(`2207226`)가 다름 — 정정 여부 미확정
+6. **Favorites** (`즐겨 듣는 곡 / 좋아하는 노래`) — 한로로 3곡 YouTube 링크 (`그건 니 생각이고` / `거절할 거야` / `할건지말건지`). 우측에 `YouTube에서 듣기 ›` 텍스트 링크(`.song-source`, 14px 액센트 블루). 빨간 점·빨간 알약은 2026-10 제거.
+7. **Colophon** (`footer.colophon`, 밝은 푸터) — `이 페이지는 Claude Code와 함께 만들었습니다.` + 푸터 (좌: `N visitors` / 우: `v.YYYY.MM`)
    - 버전 라벨(`#version`)은 하드코딩이 아니라 인라인 JS가 방문 시점의 `new Date()`로 `v.YYYY.MM`을 주입(현재 월 자동 갱신). HTML의 값은 JS 미동작 시 폴백일 뿐이므로 수동 갱신 불필요.
 
 ## 방문자 카운터
