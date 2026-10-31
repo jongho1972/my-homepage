@@ -1,25 +1,31 @@
 /* ──────────────────────────────────────────────
-   J-Hawk Homepage — single column, Apple design guide (A안)
-   tokens: canvas #f5f5f7 / surface #fff / ink #1d1d1f / tile #272729
-           accent #0066cc (on dark #2997ff, focus #0071e3)
+   J-Hawk Homepage — single column, dark fixed (2026-10-31)
+   tokens: canvas #0b0c0e / surface #15171a / ink #f2f3f5
+           accent #3d9bff (fill #0a6fe0, focus #5aa9ff)
    rules:  body 17px · no card shadows · hairline borders · one accent
+           line icons only (no emoji) · blue only on email pill & text links
    ────────────────────────────────────────────── */
 
 :root {
-  --bg: #f5f5f7;
-  --surface: #ffffff;
-  --ink: #1d1d1f;
-  --ink-80: #333333;
-  --muted: #7a7a7a;
-  --tile: #272729;
-  --on-dark: #ffffff;
-  --on-dark-muted: #cccccc;
-  --accent: #0066cc;
-  --accent-on-dark: #2997ff;
-  --focus: #0071e3;
-  --rule: #e0e0e0;
-  --dot: #d2d2d7;
-  --frame-outer: #ececef;
+  color-scheme: dark;
+  --bg: #0b0c0e;
+  --surface: #15171a;
+  --surface-2: #1d2025;      /* 아이콘 타일 */
+  --ink: #f2f3f5;            /* 순백 아님 — OLED 번짐 방지 */
+  --ink-80: #c9ccd2;
+  --muted: #8f949c;          /* AA: 6.41 on bg · 5.89 on surface */
+  --icon: #aeb3bb;
+  --accent: #3d9bff;         /* 6.27 on surface */
+  --accent-fill: #0a6fe0;    /* 이메일 알약 배경 (흰 글자 4.81) */
+  --on-accent: #ffffff;
+  --alert: #ff6b6b;
+  --focus: #5aa9ff;
+  --rule: #24272d;
+  --rule-strong: rgba(255, 255, 255, 0.16);
+  --dot: #3a3e45;
+  --dot-live: #4a4f57;
+  --frame-outer: #050607;
+  --frame-edge: rgba(255, 255, 255, 0.06);
 
   --radius-card: 18px;
   --radius-icon: 11px;
@@ -29,6 +35,8 @@
   --track-body: -0.374px;
   --track-caption: -0.224px;
   --track-fine: -0.12px;
+  --track-eyebrow: 0.02em;
+  --track-label: 0.08em;     /* 대문자 소형 라벨 */
 
   --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
 }
@@ -49,6 +57,8 @@ html, body {
   font-size: 17px;
   line-height: 1.47;
   letter-spacing: var(--track-body);
+  word-break: keep-all;        /* 한국어 단어 중간 줄바꿈 방지 */
+  overflow-wrap: break-word;   /* 긴 영문·URL은 넘치지 않게 */
 }
 
 /* keyboard focus */
@@ -67,7 +77,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto;
   min-height: 100vh;
   background: var(--bg);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 0 1px var(--frame-edge);
   padding: 10px 16px 0;
 }
 
@@ -79,12 +89,25 @@ a { color: inherit; text-decoration: none; }
 .eyebrow {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: var(--track-caption);
+  letter-spacing: var(--track-eyebrow);
   color: var(--muted);
 }
 
 .accent { color: var(--accent); }
-.card-dark .accent { color: var(--accent-on-dark); }
+
+/* small uppercase labels — 정돈된 리포트 톤 */
+.page-header .eyebrow,
+.proj-meta,
+.t-range,
+.song-idx,
+.colophon-foot {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
 
 /* ── Header ── */
 .page-header {
@@ -92,11 +115,6 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: space-between;
   padding: 8px 2px 14px;
-}
-.page-header .eyebrow {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: var(--track-fine);
 }
 .brand {
   display: flex;
@@ -107,7 +125,7 @@ a { color: inherit; text-decoration: none; }
   width: 26px;
   height: 26px;
   background: var(--ink);
-  color: var(--on-dark);
+  color: var(--bg);
   display: grid;
   place-items: center;
   border-radius: 8px;
@@ -129,38 +147,30 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius-card);
   padding: 18px;
 }
-.card-dark {
-  background: var(--tile);
-  color: var(--on-dark);
-  border-color: var(--tile);
-}
 
-/* ── Hero ── */
+/* ── Hero — 박스 없이 타이포로 위계 ── */
 .hero {
-  padding: 32px 24px 28px;
-  margin-bottom: 8px;
+  padding: 30px 4px 26px;
+  border-bottom: 1px solid var(--rule);
 }
 .hero-headline {
   display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 10px 18px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 }
 .hero-title {
   font-weight: 600;
-  font-size: 40px;
-  line-height: 1.1;
-  letter-spacing: var(--track-display);
+  font-size: 46px;
+  line-height: 1.05;
+  letter-spacing: -0.6px;
 }
 .hero-intro {
-  flex: 1 1 180px;
-  min-width: 0;
-  padding-bottom: 4px;
-  font-size: 17px;
-  color: var(--on-dark-muted);
+  font-size: 16px;
+  color: var(--muted);
 }
 .hero-actions {
-  margin-top: 22px;
+  margin-top: 24px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -171,6 +181,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   gap: 7px;
+  min-height: 44px;            /* 터치 영역 최소 44px */
   padding: 10px 18px;
   border-radius: var(--radius-pill);
   font-size: 15px;
@@ -189,12 +200,13 @@ a { color: inherit; text-decoration: none; }
   white-space: nowrap;
 }
 .pill-primary {
-  background: var(--accent);
-  color: var(--on-dark);
+  background: var(--accent-fill);
+  color: var(--on-accent);
+  font-weight: 600;
 }
 .pill-ghost {
-  color: var(--accent-on-dark);
-  border: 1px solid var(--accent-on-dark);
+  color: var(--ink-80);
+  border: 1px solid var(--rule-strong);
 }
 
 /* ── Section heading ── */
@@ -232,22 +244,27 @@ a { color: inherit; text-decoration: none; }
   width: 44px;
   height: 44px;
   border-radius: var(--radius-icon);
-  background: var(--bg);
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  color: var(--icon);
   display: grid;
   place-items: center;
-  font-size: 22px;
-  line-height: 1;
+}
+.proj-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .proj-body { display: block; min-width: 0; }
 .proj-meta {
   display: flex;
   gap: 4px;
   align-items: baseline;
-  font-size: 12px;
-  letter-spacing: var(--track-fine);
-  color: var(--muted);
 }
-.proj-idx { font-variant-numeric: tabular-nums; }
 .proj-tag::before { content: "· "; }
 .proj-title {
   display: block;
@@ -275,15 +292,12 @@ a { color: inherit; text-decoration: none; }
   margin-top: 2px;
 }
 .proj-sub-alert {
-  color: #d70015;
+  color: var(--alert);
 }
 .proj-chev {
   font-size: 22px;
   color: var(--muted);
   line-height: 1;
-}
-.project-row-live .proj-chev {
-  color: var(--accent);
 }
 
 /* live dot — static status mark */
@@ -293,7 +307,7 @@ a { color: inherit; text-decoration: none; }
   height: 6px;
   margin-left: 8px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--dot-live);
   vertical-align: middle;
   position: relative;
   top: -1px;
@@ -362,12 +376,6 @@ a { color: inherit; text-decoration: none; }
   outline: 3px solid var(--surface);
 }
 .t-row-current .t-dot { background: var(--accent); }
-.t-range {
-  font-size: 12px;
-  letter-spacing: var(--track-fine);
-  font-variant-numeric: tabular-nums;
-  color: var(--muted);
-}
 .t-org {
   font-size: 17px;
   font-weight: 600;
@@ -409,6 +417,7 @@ a { color: inherit; text-decoration: none; }
 .t-role-link,
 .t-thesis a {
   color: var(--accent);
+  padding-block: 12px;  /* 터치 영역 확장 — 인라인 세로 패딩은 레이아웃 불변 */
 }
 .t-role-doc:active,
 .t-role-link:active,
@@ -424,6 +433,9 @@ a { color: inherit; text-decoration: none; }
 .t-role-link {
   margin-left: 2px;
 }
+/* 위아래로 붙은 링크끼리 터치 영역이 겹치지 않게 간격 확보 */
+.t-org:has(> a) + .t-role { margin-top: 22px; }
+.t-role:has(> a) + .t-thesis { margin-top: 22px; }
 .t-org-link {
   font-weight: 600;
   margin-left: 0;
@@ -467,12 +479,6 @@ a { color: inherit; text-decoration: none; }
   min-width: 0;
   flex: 1;
 }
-.song-idx {
-  font-size: 12px;
-  letter-spacing: var(--track-fine);
-  font-variant-numeric: tabular-nums;
-  color: var(--muted);
-}
 .song-source {
   font-size: 14px;
   letter-spacing: var(--track-caption);
@@ -502,12 +508,6 @@ a { color: inherit; text-decoration: none; }
   align-items: baseline;
   gap: 12px;
   margin-top: 12px;
-  font-size: 12px;
-  letter-spacing: var(--track-fine);
-  color: var(--muted);
-}
-.colophon-foot #visitor-count {
-  font-variant-numeric: tabular-nums;
 }
 
 /* ── Mobile ── */
