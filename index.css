@@ -38,7 +38,7 @@
   --track-eyebrow: 0.02em;
   --track-label: 0.08em;     /* 대문자 소형 라벨 */
 
-  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+  --font-sans: Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
 }
 
 * {

@@ -4,7 +4,7 @@
 
 ## 프로젝트 개요
 
-이종호(J-Hawk)의 정적 개인 홈페이지입니다. 빌드 시스템·의존성·패키지 매니저 없이 순수 HTML, CSS, 이미지 파일로만 구성되어 있습니다. 외부 폰트 로드 없이 SF 시스템 폰트를 사용합니다.
+이종호(J-Hawk)의 정적 개인 홈페이지입니다. 빌드 시스템·의존성·패키지 매니저 없이 순수 HTML, CSS, 이미지 파일로만 구성되어 있습니다. 폰트는 프리텐다드(Pretendard)이며 jsDelivr CDN에서 불러옵니다. 불러오지 못하면 기기 폰트로 표시됩니다.
 
 ## 배포
 
@@ -45,7 +45,7 @@ python3 -m http.server 8000
 파일 구성:
 
 - `index.html` — 단일 컬럼 모듈러 카드 페이지 (`.frame` 안에 7개 섹션)
-- `index.css` — 모든 스타일 (CSS 변수로 토큰화); 외부 폰트 의존 없음; 프레임워크 없음
+- `index.css` — 모든 스타일 (CSS 변수로 토큰화); 폰트는 프리텐다드(`--font-sans`, CDN 로드는 HTML `<link>`); 프레임워크 없음
 - `license.html` — 손해평가사 자격증 이미지 전용 뷰어 페이지 (다크 라이트박스, `max-width: min(380px,86vw)` · `max-height: 78vh`로 모바일 풀스크린 방지, `noindex`, 안전영역·reduced-motion 처리). index.css에 의존하지 않는 인라인 스타일 단일 파일
 - `jh.jpg` — 프로필 사진(파비콘 폴백)
 - `favicon.svg` — 기본 파비콘

@@ -11,7 +11,7 @@
   <text x="32" y="33"
         text-anchor="middle"
         dominant-baseline="central"
-        font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+        font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
         font-size="26"
         font-weight="800"
         fill="#ffffff"
