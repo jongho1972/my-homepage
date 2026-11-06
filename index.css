@@ -533,3 +533,40 @@ a { color: inherit; text-decoration: none; }
     transform: none;
   }
 }
+
+/* ── Motion ──
+   .motion은 head 스크립트가 붙임 → 클래스가 없거나 인쇄할 때는 원래 화면 */
+@keyframes rise {
+  from { opacity: 0; translate: 0 8px; }
+}
+@keyframes ping {
+  from { transform: scale(1); opacity: 0.6; }
+  to   { transform: scale(3.5); opacity: 0; }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .hero-title,
+  .hero-intro,
+  .hero-actions { animation: rise 0.38s ease-out backwards; }
+  .hero-intro { animation-delay: 60ms; }
+  .hero-actions { animation-delay: 120ms; }
+
+  .motion :is(.section-head, .project-row, .timeline-card, .songs):not(.in) { opacity: 0; }
+  .in { animation: rise 0.4s ease-out backwards; }
+
+  /* 기존 회색 선 위에 그린 길이(--draw)만큼 밝은 선을 겹침 */
+  .motion .timeline-draw::before {
+    background: linear-gradient(var(--muted) 0 0) top / 100% var(--draw, 0px) no-repeat var(--rule);
+  }
+  .motion .timeline-draw .t-dot { transition: background-color 0.25s ease; }
+  .motion .timeline-draw .t-row-current:not(.lit) .t-dot { background: var(--dot); }
+  .motion .timeline-draw .t-row.lit:not(.t-row-current) .t-dot { background: var(--muted); }
+  .t-row-current.lit .t-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: ping 0.7s ease-out both;
+  }
+}

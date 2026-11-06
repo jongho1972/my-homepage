@@ -9,8 +9,13 @@
   <meta name="theme-color" content="#0b0c0e">
   <meta name="description" content="이종호(J-Hawk) 개인 홈페이지 — ETF 투자 가이드 · 복권 · 사주 · 손금 · EDM DJ · 여행 코스 등 Claude Code 기반 프로젝트 모음">
   <title>J-Hawk · Homepage</title>
+  <script>
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('motion');
+    }
+  </script>
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" rel="stylesheet">
-  <link href="index.css?v=20261106a" rel="stylesheet">
+  <link href="index.css?v=20261106b" rel="stylesheet">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
   <link href="jh.jpg" rel="icon" type="image/jpeg" sizes="any">
   <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
@@ -154,7 +159,7 @@
       <span class="eyebrow">91 — 26</span>
     </div>
     <section class="card timeline-card">
-      <ol class="timeline">
+      <ol class="timeline timeline-draw">
         <li class="t-row">
           <span class="t-dot"></span>
           <div class="t-range">1991.03 — 1997.02</div>
@@ -292,6 +297,60 @@
       var now = new Date();
       var mm = String(now.getMonth() + 1).padStart(2, '0');
       document.getElementById('version').textContent = 'v.' + now.getFullYear() + '.' + mm;
+    })();
+  </script>
+  <script>
+    // 모션: 스크롤 등장 + 이력 타임라인 그리기
+    // 위 스크립트의 오류로 내용이 숨은 채 남지 않도록 별도 블록으로 둠
+    (function () {
+      if (!document.documentElement.classList.contains('motion')) return;
+
+      var io = new IntersectionObserver(function (entries) {
+        var n = 0;
+        entries.forEach(function (e) {
+          // 빠른 스크롤·위치 복원으로 이미 지나친 요소도 표시
+          if (!e.isIntersecting && e.boundingClientRect.top >= 0) return;
+          e.target.style.animationDelay = Math.min(n++, 5) * 40 + 'ms';
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('.section-head, .project-row, .timeline-card, .songs')
+        .forEach(function (el) { io.observe(el); });
+
+      var line = document.querySelector('.timeline-draw');
+      var rows = Array.from(line.children);
+      var ANCHOR = 0.7;      // 화면 높이의 70% 지점까지 선을 그림
+      var top = 0, length = 0, pageH = 0, dots = [], reached = 0;
+      // 모바일 주소창이 접혀도 튀지 않도록 화면 높이는 폭이 바뀔 때만 갱신
+      var vh = window.innerHeight, vw = window.innerWidth;
+
+      function update() {
+        var atEnd = window.scrollY + window.innerHeight >= pageH - 2;
+        var y = atEnd ? length : window.scrollY + vh * ANCHOR - top;
+        var next = Math.min(length, Math.max(reached, y));   // 한 번 그린 선은 되돌리지 않음
+        if (next === reached) return;
+        reached = next;
+        line.style.setProperty('--draw', reached + 'px');
+        rows.forEach(function (row, i) {
+          if (reached >= dots[i]) row.classList.add('lit');
+        });
+      }
+      function measure() {
+        if (window.innerWidth !== vw) { vw = window.innerWidth; vh = window.innerHeight; }
+        var lineTop = line.getBoundingClientRect().top + parseFloat(getComputedStyle(line, '::before').top);
+        top = lineTop + window.scrollY;
+        dots = rows.map(function (row) {
+          var r = row.querySelector('.t-dot').getBoundingClientRect();
+          return r.top + r.height / 2 - lineTop;
+        });
+        length = dots[dots.length - 1];
+        pageH = document.documentElement.scrollHeight;
+        update();
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      new ResizeObserver(measure).observe(document.body);   // 폰트 로드·회전 등 레이아웃 변화 반영
     })();
   </script>
 

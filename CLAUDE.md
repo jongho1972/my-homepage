@@ -35,7 +35,9 @@ python3 -m http.server 8000
 - 아이콘은 **단색 선 SVG만**(stroke 1.6, `--icon` 색, 인라인 `<svg viewBox="0 0 24 24">`, 스타일은 `.proj-icon svg`). 컬러 이모지 사용 금지
 - Hero는 박스 없이 타이포로 위계(하단 헤어라인). Colophon은 상단 헤어라인 푸터
 - 인터랙션: 누를 때 `scale(0.95)`(알약) / `scale(0.98)`(프로젝트 행). hover로 떠오르는 효과 없음. 데스크탑 hover 시 `OPEN` 슬라이드인만 유지
-- 모션 접근성: `@media (prefers-reduced-motion: reduce)`에서 transition/transform 비활성화
+- 스크롤·진입 모션(2026-11-06, 라이브러리 없음): 첫 화면 순차 등장(CSS만, 0.5초 이내) · 섹션/카드 스크롤 등장(8px, 0.4초, 1회) · 이력 타임라인 선이 스크롤에 따라 밝아지고 점이 켜지며 현재 직장 점만 파랗게 켜짐(되돌리지 않음). 3D·마우스 추적 기울기·스크롤 가로채기는 넣지 않기로 결정(용량·모바일·톤)
+- 모션 구조: head 인라인 스크립트가 `html.motion`을 붙이고, 그때만 등장 대상을 숨김 → 클래스가 없으면 원래 화면. 등장 대상 목록은 `index.css`와 `index.html` 하단 스크립트 **두 곳**에 있어, 한쪽만 고치면 요소가 숨은 채 남을 수 있음. 모션 CSS는 `@media screen and (prefers-reduced-motion: no-preference)` 블록 안에 둠(인쇄 제외)
+- 모션 접근성: `@media (prefers-reduced-motion: reduce)`에서 transition/transform 비활성화, 위 모션도 전부 꺼짐
 - 모바일 UX: `.pill / .project-row / .song-row`에 `touch-action: manipulation` (더블탭 줌 지연 제거)
 - 모바일 접근성(2026-10-31): `.pill` `min-height: 44px` · 이력 안 글자 링크(`.t-role-doc / .t-role-link / .t-thesis a`)는 `padding-block: 12px`로 터치 영역만 확장(레이아웃 불변) + 위아래 링크 사이 간격(`:has`)으로 겹침 방지 · 전역 `word-break: keep-all`
 - 디자인 레퍼런스 원본은 `design_handoff_jhawk_homepage/` (gitignore, 로컬 보관)
