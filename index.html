@@ -15,7 +15,7 @@
     }
   </script>
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" rel="stylesheet">
-  <link href="index.css?v=20261106b" rel="stylesheet">
+  <link href="index.css?v=20261108" rel="stylesheet">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
   <link href="jh.jpg" rel="icon" type="image/jpeg" sizes="any">
   <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
@@ -317,6 +317,14 @@
       }, { rootMargin: '0px 0px -6% 0px' });
       document.querySelectorAll('.section-head, .project-row, .timeline-card, .songs')
         .forEach(function (el) { io.observe(el); });
+
+      // 터치 기기: 화면 가운데 띠를 지나는 프로젝트 카드를 켬 (hover 대신)
+      if (matchMedia('(hover: none)').matches) {
+        var spot = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { e.target.classList.toggle('spot', e.isIntersecting); });
+        }, { rootMargin: '-46% 0px -46% 0px' });
+        document.querySelectorAll('.project-row').forEach(function (el) { spot.observe(el); });
+      }
 
       var line = document.querySelector('.timeline-draw');
       var rows = Array.from(line.children);

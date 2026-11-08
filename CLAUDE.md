@@ -30,12 +30,13 @@ python3 -m http.server 8000
 - 핵심 토큰: `--frame-outer #050607` / `--bg #0b0c0e` / `--surface #15171a` / `--surface-2 #1d2025`(아이콘 타일) / `--ink #f2f3f5`(순백 금지 — OLED 번짐) / `--ink-80 #c9ccd2` / `--muted #8f949c` / `--icon #aeb3bb` / `--accent #3d9bff` / `--accent-fill #0a6fe0`(이메일 알약) / `--focus #5aa9ff` / `--rule #24272d` / `--rule-strong rgba(255,255,255,.16)` / `--dot-live #4a4f57` / `--alert #ff6b6b`. 텍스트 대비는 전부 WCAG AA 이상(muted 5.89~6.41, accent 6.27, 알약 흰 글자 4.81)
 - `<meta name="color-scheme" content="dark">` · `theme-color #0b0c0e` (iOS 상단바·스크롤바 다크)
 - 타이포: 본문 17px·line-height 1.47·letter-spacing -0.374px, 제목 굵기 600(히어로 46px · 섹션 28px), 캡션 14px. 작은 메타 라벨(`.proj-meta / .t-range / .song-idx / .colophon-foot / 헤더 Seoul, KR`)은 11px·500·대문자·자간 0.08em·tabular-nums로 통일. 모노 서체·10px 글씨 사용 안 함
-- 카드: 1px 헤어라인 + radius 18, **그림자 없음**. 알약 999
-- 강조색은 파랑 하나만, 그것도 **이메일 알약·글자 링크·히어로 J-Hawk**에만. 프로젝트 라이브 점·chevron은 회색. Instagram 그라데이션·YouTube 빨강 같은 브랜드 색 쓰지 않음
+- 카드: 1px 헤어라인 + radius 18, 그림자 없음(예외: 모바일 `.spot` 카드의 블루 글로우). 알약 999
+- 강조색은 파랑 하나만. 이메일 알약·글자 링크·히어로 J-Hawk + (2026-11-08 사용자 결정으로 확장) 히어로 오로라 배경·모바일 `.spot` 카드(테두리·글로우·아이콘·라이브 점·chevron). 평상시 라이브 점·chevron은 회색. Instagram 그라데이션·YouTube 빨강 같은 브랜드 색 쓰지 않음
 - 아이콘은 **단색 선 SVG만**(stroke 1.6, `--icon` 색, 인라인 `<svg viewBox="0 0 24 24">`, 스타일은 `.proj-icon svg`). 컬러 이모지 사용 금지
 - Hero는 박스 없이 타이포로 위계(하단 헤어라인). Colophon은 상단 헤어라인 푸터
 - 인터랙션: 누를 때 `scale(0.95)`(알약) / `scale(0.98)`(프로젝트 행). hover로 떠오르는 효과 없음. 데스크탑 hover 시 `OPEN` 슬라이드인만 유지
 - 스크롤·진입 모션(2026-11-06, 라이브러리 없음): 첫 화면 순차 등장(CSS만, 0.5초 이내) · 섹션/카드 스크롤 등장(8px, 0.4초, 1회) · 이력 타임라인 선이 스크롤에 따라 밝아지고 점이 켜지며 현재 직장 점만 파랗게 켜짐(되돌리지 않음). 3D·마우스 추적 기울기·스크롤 가로채기는 넣지 않기로 결정(용량·모바일·톤)
+- 모바일 "와우" 보강(2026-11-08): 히어로 뒤 블루 오로라(`.hero::before`, 16초 천천히 흐름) + 아래로 사라지는 점 격자(`.hero::after`) · 진입 직후 `J-Hawk`에 빛이 1회 지나감(`shine`) · 터치 기기(`hover: none`)에서 화면 가운데를 지나는 프로젝트 카드에 `.spot`이 붙어 블루 테두리·글로우·아이콘·라이브 점으로 켜지고 `OPEN`이 표시됨(데스크탑 hover 대응). 오로라 가로 넘침은 `.frame { overflow-x: clip }`로 차단
 - 모션 구조: head 인라인 스크립트가 `html.motion`을 붙이고, 그때만 등장 대상을 숨김 → 클래스가 없으면 원래 화면. 등장 대상 목록은 `index.css`와 `index.html` 하단 스크립트 **두 곳**에 있어, 한쪽만 고치면 요소가 숨은 채 남을 수 있음. 모션 CSS는 `@media screen and (prefers-reduced-motion: no-preference)` 블록 안에 둠(인쇄 제외)
 - 모션 접근성: `@media (prefers-reduced-motion: reduce)`에서 transition/transform 비활성화, 위 모션도 전부 꺼짐
 - 모바일 UX: `.pill / .project-row / .song-row`에 `touch-action: manipulation` (더블탭 줌 지연 제거)

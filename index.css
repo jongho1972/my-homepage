@@ -79,6 +79,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg);
   box-shadow: 0 0 0 1px var(--frame-edge);
   padding: 10px 16px 0;
+  overflow-x: clip;            /* 히어로 오로라가 가로 스크롤을 만들지 않게 */
 }
 
 @media (max-width: 600px) {
@@ -150,8 +151,32 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Hero — 박스 없이 타이포로 위계 ── */
 .hero {
+  position: relative;
+  isolation: isolate;
   padding: 30px 4px 26px;
   border-bottom: 1px solid var(--rule);
+}
+/* 히어로 뒤 은은한 블루 오로라 + 아래로 사라지는 점 격자 (장식, 클릭 통과) */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+.hero::before {
+  inset: -60px -16px 0;
+  background:
+    radial-gradient(60% 55% at 78% 30%, rgba(61, 155, 255, 0.34), transparent 70%),
+    radial-gradient(45% 45% at 20% 70%, rgba(10, 111, 224, 0.26), transparent 70%);
+  filter: blur(22px);
+}
+.hero::after {
+  inset: -10px -16px 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1.2px);
+  background-size: 18px 18px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
 }
 .hero-headline {
   display: flex;
@@ -237,7 +262,7 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 16px;
   color: var(--ink);
   touch-action: manipulation;
-  transition: transform 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .project-row:active { transform: scale(0.98); }
 .proj-icon {
@@ -330,6 +355,28 @@ a { color: inherit; text-decoration: none; }
   transform: translateX(6px);
   transition: opacity 0.18s ease, max-width 0.22s ease, transform 0.18s ease, margin-right 0.18s ease;
   margin-right: 0;
+}
+/* 터치 기기: 화면 가운데를 지나는 카드가 hover처럼 켜짐 (.spot은 하단 스크립트가 붙임) */
+.proj-icon { transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease; }
+.proj-chev { transition: color 0.3s ease, transform 0.3s ease; }
+.proj-live { transition: background-color 0.3s ease; }
+.project-row.spot {
+  border-color: rgba(61, 155, 255, 0.45);
+  background-color: #151b24;
+  box-shadow: 0 0 28px rgba(61, 155, 255, 0.14);
+}
+.project-row.spot .proj-icon {
+  color: var(--accent);
+  border-color: rgba(61, 155, 255, 0.35);
+  background-color: rgba(61, 155, 255, 0.1);
+}
+.project-row.spot .proj-chev { color: var(--accent); transform: translateX(2px); }
+.project-row.spot .proj-live { background: var(--accent); }
+.project-row.spot .proj-cta {
+  opacity: 1;
+  max-width: 50px;
+  transform: translateX(0);
+  margin-right: 8px;
 }
 @media (hover: hover) {
   .project-row:hover .proj-cta,
@@ -544,7 +591,28 @@ a { color: inherit; text-decoration: none; }
   to   { transform: scale(3.5); opacity: 0; }
 }
 
+@keyframes aurora {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-6%, 4%, 0) scale(1.08); }
+  100% { transform: translate3d(4%, -3%, 0) scale(0.96); }
+}
+@keyframes shine {
+  from { background-position: 100% 0; }
+  to   { background-position: 0 0; }
+}
+
 @media screen and (prefers-reduced-motion: no-preference) {
+  .hero::before { animation: aurora 16s ease-in-out infinite alternate; }
+
+  /* J-Hawk에 빛이 한 번 지나감 (진입 직후 1회) */
+  .hero-title .accent {
+    background: linear-gradient(100deg, var(--accent) 0 40%, #cfe6ff 50%, var(--accent) 60% 100%) 100% 0 / 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 1.4s ease-in-out 0.5s both;
+  }
+
   .hero-title,
   .hero-intro,
   .hero-actions { animation: rise 0.38s ease-out backwards; }
