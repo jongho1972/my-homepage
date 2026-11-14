@@ -18,6 +18,7 @@
 | AI 사주팔자 | https://fortune.jhawk.kr |
 | AI 손금풀이 | https://sonkum.jhawk.kr |
 | EDM DJ Console | https://edm-jahwk.netlify.app |
+| 강릉 여행 추천 코스 | https://tour-gangneung-jhawk.netlify.app |
 | 일본 마쓰야마 여행 추천 코스 | https://tour-matsuyama-jhawk.netlify.app |
 | 호남 서남해안 여행 추천 코스 | https://tour-jeolla-jhawk.netlify.app |
 | 동유럽 여행 추천 코스 | https://tour-europe-jhawk.netlify.app |
