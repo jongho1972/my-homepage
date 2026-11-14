@@ -65,15 +65,16 @@ python3 -m http.server 8000
 2. **Hero** (`section.hero`, 카드 박스 없음) — H1 `이종호 / J-Hawk`(`.accent`만 블루) + 그 아래 줄에 회색 한 줄 소개(`"GD는 G-Dragon, JH는 J-Hawk"`) + 알약 버튼 2개 (콘텐츠 폭, 이메일 주소가 잘리지 않게 표시)
    - 이메일(1번째): `mailto:jongho1972@gmail.com` (`.pill-primary` 파란 알약 + 단색 봉투 아이콘)
    - Instagram(2번째): `https://www.instagram.com/jongho1972/?hl=ko` (`.pill-ghost` 회색 테두리 알약)
-3. **Projects** (`프로젝트 / Claude Code로 만든 서비스`) — 9개 카드 행 (`.project-row`): 선 아이콘 타일 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
-   - 아이콘: ETF=상승 그래프, 공개데이터=막대, 복권=주사위, 사주=달, 손금=손, EDM=헤드폰, 마쓰야마=위치핀, 호남=지도, 동유럽=비행기
-   - 9개 모두 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 회색 `--dot-live`) + 회색 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`, 블루). 모바일은 라이브 점·chevron만 노출(호버 없음).
+3. **Projects** (`프로젝트 / Claude Code로 만든 서비스`) — 10개 카드 행 (`.project-row`): 선 아이콘 타일 + 인덱스/태그 + 타이틀 + 부제 + chevron. 모두 현재 탭에서 열림.
+   - 아이콘: ETF=상승 그래프, 공개데이터=막대, 복권=주사위, 사주=달, 손금=손, EDM=헤드폰, 강릉=물결, 마쓰야마=위치핀, 호남=지도, 동유럽=비행기
+   - 10개 모두 `.project-row-live` 클래스: 타이틀 옆 라이브 점(`.proj-live`, 회색 `--dot-live`) + 회색 chevron + 데스크탑 호버 시 `OPEN` 슬라이드인(`.proj-cta`, 블루). 모바일은 라이브 점·chevron만 노출(호버 없음).
    - 비공개 항목을 추가할 때는 `.project-row-live`를 빼면 라이브 점 없이 표시됨.
    - `https://etf.jhawk.kr` — ETF 투자 가이드 · GUIDE
    - `https://lottery.jhawk.kr/` — 통계 기반 복권번호 생성기 · TOOL
    - `https://fortune.jhawk.kr/` — AI 사주팔자 · AI
    - `https://sonkum.jhawk.kr/` — AI 손금풀이 · PALMISTRY
    - `https://edm-jahwk.netlify.app` — EDM DJ Console · PLAY
+   - `https://tour-gangneung-jhawk.netlify.app` — 강릉 여행 추천 코스 · TRAVEL (07번, 2026-11-14 추가. 링크 공개·noindex)
    - `https://tour-jeolla-jhawk.netlify.app` — 호남 서남해안 여행 추천 코스 · TRAVEL (공개·라이브, 일반 추천 코스로 전환)
    - `https://tour-europe-jhawk.netlify.app` — 동유럽 여행 코스 · TRAVEL (공개·라이브, 일반 추천 코스로 전환 / 실제 여행 일정은 보류)
    - `https://opendata-jhawk.netlify.app/` — 공개 데이터 활용 사례 · DATA (공개·라이브, 02번 위치. 인천공항·관광·면세 공개 데이터 대시보드)
