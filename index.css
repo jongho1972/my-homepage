@@ -1,7 +1,7 @@
 /* ──────────────────────────────────────────────
    J-Hawk Homepage — single column, dark fixed (2026-10-31)
-   tokens: canvas #0b0c0e / surface #15171a / ink #f2f3f5
-           accent #3d9bff (fill #0a6fe0, focus #5aa9ff)
+   tokens: canvas #0c0d0e / surface #151617 / ink #f1f1ef
+           accent #7fb0ee (fill #e8e8e6, focus #a3c7f3)
    rules:  body 17px · no card shadows · hairline borders
            line icons only (no emoji) · category colors (.cat-*) on tiles, labels, timeline
            headings & body stay neutral, text links stay accent blue
@@ -9,29 +9,30 @@
 
 :root {
   color-scheme: dark;
-  --bg: #0b0c0e;
-  --surface: #15171a;
-  --ink: #f2f3f5;            /* 순백 아님 — OLED 번짐 방지 */
-  --ink-80: #c9ccd2;
-  --muted: #8f949c;          /* AA: 6.41 on bg · 5.89 on surface */
-  --accent: #3d9bff;         /* 6.27 on surface */
-  --accent-fill: #0a6fe0;    /* 이메일 알약 배경 (흰 글자 4.81) */
-  --on-accent: #ffffff;
-  --alert: #ff6b6b;
-  --focus: #5aa9ff;
-  --rule: #24272d;
-  --dot: #3a3e45;
-  --live: #3ecf8e;
+  --bg: #0c0d0e;
+  --surface: #151617;
+  --ink: #f1f1ef;            /* 순백 아님 — OLED 번짐 방지 */
+  --ink-80: #c8c9ca;
+  --muted: #93949a;          /* AA: 6.43 on bg · 5.99 on surface */
+  --accent: #7fb0ee;         /* 8.06 on surface */
+  --accent-fill: #e8e8e6;    /* 이메일 알약 배경 실버 (글자 15.41) */
+  --on-accent: #101112;
+  --on-tile: #f1f1ef;        /* 색 타일 위 아이콘 */
+  --alert: #ef7f78;
+  --focus: #a3c7f3;
+  --rule: #26272a;
+  --dot: #3a3b3f;
+  --live: #6dbf95;
 
   /* 분야 색(글자·선·점) */
-  --tone-data: #7cbdff;
-  --tone-luck: #bda8fc;
-  --tone-travel: #44d0c1;
-  --tone-music: #f197c2;
-  --tone-gold: #e8b762;
-  --brand: linear-gradient(95deg, #5aa9ff, #44d0c1);   /* J-Hawk·Claude Code 글자 */
+  --tone-data: #7fb0ee;
+  --tone-luck: #b3a6dc;
+  --tone-travel: #7cc4ba;
+  --tone-music: #dba3bf;
+  --tone-gold: #cfae74;
+  --brand: linear-gradient(95deg, #8fb9ee, #7cc4ba);   /* J-Hawk·Claude Code 글자 */
 
-  --frame-outer: #050607;
+  --frame-outer: #0c0d0e;
   --frame-edge: rgba(255, 255, 255, 0.06);
 
   --radius-card: 18px;
@@ -113,18 +114,18 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ── Category colors — tile-a→tile-b 타일 그라데이션(밝기·채도를 맞춘 OKLCH 값), tone 글자·선·점 ── */
-.project-row, .cat-data { --tile-a: #2f8adc; --tile-b: #3e4ea5; --tone: var(--tone-data); }
-.cat-luck { --tile-a: #8e71d6; --tile-b: #76398b; --tone: var(--tone-luck); }
-.cat-travel { --tile-a: #139a8e; --tile-b: #0b646d; --tone: var(--tone-travel); }
-.cat-music { --tile-a: #c65b93; --tile-b: #952c43; --tone: var(--tone-music); }
-.cat-gold { --tile-a: #c28513; --tile-b: #82501a; --tone: var(--tone-gold); }
+.project-row, .cat-data { --tile-a: #598abc; --tile-b: #475488; --tone: var(--tone-data); }
+.cat-luck { --tile-a: #8a7bb9; --tile-b: #6b4878; --tone: var(--tone-luck); }
+.cat-travel { --tile-a: #55938b; --tile-b: #376065; --tone: var(--tone-travel); }
+.cat-music { --tile-a: #b06e8e; --tile-b: #81424b; --tone: var(--tone-music); }
+.cat-gold { --tile-a: #a07c46; --tile-b: #75563a; --tone: var(--tone-gold); }
 .tile {
   width: 48px;
   height: 48px;
   border-radius: var(--radius-icon);
   background: linear-gradient(160deg, var(--tile-a), var(--tile-b));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
-  color: var(--on-accent);
+  color: var(--on-tile);
   display: grid;
   place-items: center;
 }
@@ -166,9 +167,9 @@ a { color: inherit; text-decoration: none; }
 .logo-box {
   width: 26px;
   height: 26px;
-  background: linear-gradient(150deg, #2f8adc, #0b646d);
+  background: linear-gradient(150deg, #598abc, #376065);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  color: var(--on-accent);
+  color: var(--on-tile);
   display: grid;
   place-items: center;
   border-radius: 8px;
@@ -209,10 +210,10 @@ a { color: inherit; text-decoration: none; }
 .hero::before {
   inset: -70px -16px 0;
   background:
-    radial-gradient(52% 55% at 86% 18%, rgba(61, 155, 255, 0.42), transparent 70%),
-    radial-gradient(46% 50% at 58% 62%, rgba(142, 113, 214, 0.3), transparent 70%),
-    radial-gradient(44% 46% at 8% 78%, rgba(19, 154, 142, 0.36), transparent 70%),
-    radial-gradient(30% 34% at 98% 88%, rgba(198, 91, 147, 0.2), transparent 70%);
+    radial-gradient(52% 55% at 86% 18%, rgba(127, 176, 238, 0.24), transparent 70%),
+    radial-gradient(46% 50% at 58% 62%, rgba(142, 126, 186, 0.2), transparent 70%),
+    radial-gradient(44% 46% at 8% 78%, rgba(88, 146, 138, 0.22), transparent 70%),
+    radial-gradient(30% 34% at 98% 88%, rgba(170, 112, 142, 0.14), transparent 70%);
   filter: blur(26px);
 }
 .hero::after {
@@ -269,17 +270,16 @@ a { color: inherit; text-decoration: none; }
   white-space: nowrap;
 }
 .pill-primary {
-  background: linear-gradient(120deg, var(--accent-fill), #3e4ea5);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: var(--accent-fill);
   color: var(--on-accent);
   font-weight: 600;
 }
 .pill-ghost {
   color: var(--ink);
-  background: rgba(241, 151, 194, 0.08);
-  border: 1px solid rgba(241, 151, 194, 0.42);
+  background: transparent;
+  border: 1px solid var(--dot);
 }
-.pill-ghost .pill-icon { color: var(--tone-music); }
+.pill-ghost .pill-icon { color: var(--muted); }
 
 /* ── Section heading ── */
 .section-head {
@@ -592,7 +592,7 @@ a { color: inherit; text-decoration: none; }
   margin: 28px -16px 0;
   padding: 22px 18px 32px;
   border-top: 2px solid;
-  border-image: linear-gradient(90deg, #2f8adc, #8e71d6, #139a8e, #c65b93) 1;
+  border-image: linear-gradient(90deg, #598abc, #8a7bb9, #55938b, #b06e8e) 1;
 }
 .colophon-body {
   font-size: 14px;
