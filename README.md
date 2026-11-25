@@ -25,7 +25,7 @@
 
 ## 기술 스택
 
-- HTML / CSS (외부 폰트·프레임워크·빌드 도구 없음)
+- HTML / CSS (프레임워크·빌드 도구 없음, 폰트는 프리텐다드를 jsDelivr CDN에서 로드)
 - j-hawk VPS의 Caddy가 정적 파일로 직접 서빙 (`main` 푸시 후 VPS에서 `git pull`)
 
 ## 파일 구조
