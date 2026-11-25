@@ -17,11 +17,11 @@
 | 통계 기반 복권번호 생성기 | https://lottery.jhawk.kr |
 | AI 사주팔자 | https://fortune.jhawk.kr |
 | AI 손금풀이 | https://sonkum.jhawk.kr |
-| EDM DJ Console | https://edm-jahwk.netlify.app |
 | KTX 뚜벅이 여행지 | https://tour-ktx-jhawk.netlify.app |
 | 호남 서남해안 여행 추천 코스 | https://tour-jeolla-jhawk.netlify.app |
 | 일본 마쓰야마 여행 추천 코스 | https://tour-matsuyama-jhawk.netlify.app |
 | 동유럽 여행 추천 코스 | https://tour-europe-jhawk.netlify.app |
+| EDM DJ Console | https://edm-jahwk.netlify.app |
 
 ## 기술 스택
 
