@@ -2,35 +2,40 @@
    J-Hawk Homepage — single column, dark fixed (2026-10-31)
    tokens: canvas #0b0c0e / surface #15171a / ink #f2f3f5
            accent #3d9bff (fill #0a6fe0, focus #5aa9ff)
-   rules:  body 17px · no card shadows · hairline borders · one accent
-           line icons only (no emoji) · blue only on email pill & text links
+   rules:  body 17px · no card shadows · hairline borders
+           line icons only (no emoji) · category colors (.cat-*) on tiles, labels, timeline
+           headings & body stay neutral, text links stay accent blue
    ────────────────────────────────────────────── */
 
 :root {
   color-scheme: dark;
   --bg: #0b0c0e;
   --surface: #15171a;
-  --surface-2: #1d2025;      /* 아이콘 타일 */
   --ink: #f2f3f5;            /* 순백 아님 — OLED 번짐 방지 */
   --ink-80: #c9ccd2;
   --muted: #8f949c;          /* AA: 6.41 on bg · 5.89 on surface */
-  --icon: #aeb3bb;
   --accent: #3d9bff;         /* 6.27 on surface */
   --accent-fill: #0a6fe0;    /* 이메일 알약 배경 (흰 글자 4.81) */
-  --accent-line: rgba(61, 155, 255, 0.45);  /* 켜진 카드·아이콘 테두리 */
-  --accent-tint: rgba(61, 155, 255, 0.1);   /* 켜진 아이콘 배경 */
   --on-accent: #ffffff;
   --alert: #ff6b6b;
   --focus: #5aa9ff;
   --rule: #24272d;
-  --rule-strong: rgba(255, 255, 255, 0.16);
   --dot: #3a3e45;
-  --dot-live: #4a4f57;
+  --live: #3ecf8e;
+
+  /* 분야 색(글자·선·점) */
+  --tone-data: #7cbdff;
+  --tone-luck: #bda8fc;
+  --tone-travel: #44d0c1;
+  --tone-music: #f197c2;
+  --tone-gold: #e8b762;
+  --brand: linear-gradient(95deg, #5aa9ff, #44d0c1);   /* J-Hawk·Claude Code 글자 */
+
   --frame-outer: #050607;
   --frame-edge: rgba(255, 255, 255, 0.06);
 
   --radius-card: 18px;
-  --radius-icon: 11px;
+  --radius-icon: 13px;
   --radius-pill: 999px;
 
   --track-display: -0.28px;
@@ -97,12 +102,46 @@ a { color: inherit; text-decoration: none; }
 }
 
 .accent { color: var(--accent); }
+@media screen {
+  .hero-title .accent,
+  .colophon-body .accent {
+    background: var(--brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* ── Category colors — tile-a→tile-b 타일 그라데이션(밝기·채도를 맞춘 OKLCH 값), tone 글자·선·점 ── */
+.project-row, .cat-data { --tile-a: #2f8adc; --tile-b: #3e4ea5; --tone: var(--tone-data); }
+.cat-luck { --tile-a: #8e71d6; --tile-b: #76398b; --tone: var(--tone-luck); }
+.cat-travel { --tile-a: #139a8e; --tile-b: #0b646d; --tone: var(--tone-travel); }
+.cat-music { --tile-a: #c65b93; --tile-b: #952c43; --tone: var(--tone-music); }
+.cat-gold { --tile-a: #c28513; --tile-b: #82501a; --tone: var(--tone-gold); }
+.tile {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-icon);
+  background: linear-gradient(160deg, var(--tile-a), var(--tile-b));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  color: var(--on-accent);
+  display: grid;
+  place-items: center;
+}
+.tile svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* small uppercase labels — 정돈된 리포트 톤 */
 .page-header .eyebrow,
 .proj-meta,
 .t-range,
-.song-idx,
 .colophon-foot {
   font-size: 11px;
   font-weight: 500;
@@ -127,8 +166,9 @@ a { color: inherit; text-decoration: none; }
 .logo-box {
   width: 26px;
   height: 26px;
-  background: var(--ink);
-  color: var(--bg);
+  background: linear-gradient(150deg, #2f8adc, #0b646d);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  color: var(--on-accent);
   display: grid;
   place-items: center;
   border-radius: 8px;
@@ -158,7 +198,7 @@ a { color: inherit; text-decoration: none; }
   padding: 30px 4px 26px;
   border-bottom: 1px solid var(--rule);
 }
-/* 히어로 뒤 은은한 블루 오로라 + 아래로 사라지는 점 격자 (장식, 클릭 통과) */
+/* 히어로 뒤 은은한 4색 오로라 + 아래로 사라지는 점 격자 (장식, 클릭 통과) */
 .hero::before,
 .hero::after {
   content: "";
@@ -167,11 +207,13 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 .hero::before {
-  inset: -60px -16px 0;
+  inset: -70px -16px 0;
   background:
-    radial-gradient(60% 55% at 78% 30%, rgba(61, 155, 255, 0.34), transparent 70%),
-    radial-gradient(45% 45% at 20% 70%, rgba(10, 111, 224, 0.26), transparent 70%);
-  filter: blur(22px);
+    radial-gradient(52% 55% at 86% 18%, rgba(61, 155, 255, 0.42), transparent 70%),
+    radial-gradient(46% 50% at 58% 62%, rgba(142, 113, 214, 0.3), transparent 70%),
+    radial-gradient(44% 46% at 8% 78%, rgba(19, 154, 142, 0.36), transparent 70%),
+    radial-gradient(30% 34% at 98% 88%, rgba(198, 91, 147, 0.2), transparent 70%);
+  filter: blur(26px);
 }
 .hero::after {
   inset: -10px -16px 0;
@@ -227,14 +269,17 @@ a { color: inherit; text-decoration: none; }
   white-space: nowrap;
 }
 .pill-primary {
-  background: var(--accent-fill);
+  background: linear-gradient(120deg, var(--accent-fill), #3e4ea5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
   color: var(--on-accent);
   font-weight: 600;
 }
 .pill-ghost {
-  color: var(--ink-80);
-  border: 1px solid var(--rule-strong);
+  color: var(--ink);
+  background: rgba(241, 151, 194, 0.08);
+  border: 1px solid rgba(241, 151, 194, 0.42);
 }
+.pill-ghost .pill-icon { color: var(--tone-music); }
 
 /* ── Section heading ── */
 .section-head {
@@ -251,6 +296,8 @@ a { color: inherit; text-decoration: none; }
   margin-top: 2px;
 }
 
+.section-head > div > .eyebrow { color: var(--tone); }
+
 /* ── Project list ── */
 .project-list {
   display: grid;
@@ -262,38 +309,22 @@ a { color: inherit; text-decoration: none; }
   gap: 14px;
   align-items: center;
   padding: 14px 16px;
+  /* 아이콘 뒤로 분야 색이 은은하게 번짐 */
+  background: radial-gradient(150px 110px at 38px 50%, color-mix(in srgb, var(--tile-a) 20%, transparent), transparent 72%), var(--surface);
   color: var(--ink);
   touch-action: manipulation;
   transition: transform 0.18s ease, border-color 0.3s ease;
 }
 .project-row:active { transform: scale(0.98); }
-.proj-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-icon);
-  background: var(--surface-2);
-  border: 1px solid var(--rule);
-  color: var(--icon);
-  display: grid;
-  place-items: center;
-  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-}
-.proj-icon svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+.proj-icon { transition: filter 0.3s ease; }
 .proj-body { display: block; min-width: 0; }
 .proj-meta {
   display: flex;
   gap: 4px;
   align-items: baseline;
 }
-.proj-tag::before { content: "· "; }
+.proj-tag { color: var(--tone); }
+.proj-tag::before { content: "· "; color: var(--muted); }
 .proj-title {
   display: block;
   font-size: 17px;
@@ -335,7 +366,7 @@ a { color: inherit; text-decoration: none; }
   height: 6px;
   margin-left: 8px;
   border-radius: 50%;
-  background: var(--dot-live);
+  background: var(--live);
   vertical-align: middle;
   position: relative;
   top: -1px;
@@ -350,7 +381,7 @@ a { color: inherit; text-decoration: none; }
 .proj-cta {
   font-size: 14px;
   letter-spacing: var(--track-caption);
-  color: var(--accent);
+  color: var(--tone);
   white-space: nowrap;
   opacity: 0;
   max-width: 0;
@@ -362,16 +393,13 @@ a { color: inherit; text-decoration: none; }
 /* 터치 기기: 누르고 있는 카드만 켜짐 (누르면 바로, 떼면 서서히 꺼짐) */
 @media (hover: none) {
   .project-row { -webkit-tap-highlight-color: transparent; }
-  .project-row:active { border-color: var(--accent-line); }
-  .project-row:active .proj-icon {
-    color: var(--accent);
-    border-color: var(--accent-line);
-    background-color: var(--accent-tint);
-  }
+  .project-row:active { border-color: var(--tone); }
+  .project-row:active .proj-icon { filter: brightness(1.18); }
   .project-row:active,
   .project-row:active .proj-icon { transition-duration: 0.06s; }
 }
 @media (hover: hover) {
+  .project-row:hover { border-color: color-mix(in srgb, var(--tone) 45%, transparent); }
   .project-row:hover .proj-cta,
   .project-row:focus-visible .proj-cta {
     opacity: 1;
@@ -399,6 +427,17 @@ a { color: inherit; text-decoration: none; }
   width: 1px;
   background: var(--rule);
 }
+/* 학업 보라 → 리서치 청록 → LG유플러스 핑크 → 호텔신라 블루 (점 색은 행의 .cat-*) */
+.timeline-draw::after {
+  content: "";
+  position: absolute;
+  left: 2.5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(var(--tone-luck) 12%, var(--tone-travel) 30% 53%, var(--tone-music) 61%, var(--tone-data) 77%);
+}
 .t-row {
   position: relative;
   padding: 12px 0;
@@ -412,10 +451,11 @@ a { color: inherit; text-decoration: none; }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--dot);
+  z-index: 1;                  /* 색 선 위에 */
+  background: var(--tone, var(--dot));
   outline: 3px solid var(--surface);
 }
-.t-row-current .t-dot { background: var(--accent); }
+.t-row-current .t-range { color: var(--tone); }
 .t-org {
   font-size: 17px;
   font-weight: 600;
@@ -495,6 +535,15 @@ a { color: inherit; text-decoration: none; }
   margin-right: 6px;
 }
 
+/* ── Certifications — 타임라인 대신 골드 타일 ── */
+.cert-list { padding-left: 62px; }
+.cert-list::before { content: none; }
+.cert-tile {
+  position: absolute;
+  left: -62px;
+  top: 14px;
+}
+
 /* ── Songs ── */
 .songs {
   padding: 4px 18px;
@@ -514,15 +563,26 @@ a { color: inherit; text-decoration: none; }
 .song-row:active { opacity: 0.6; }
 .song-meta {
   display: flex;
-  gap: 10px;
-  align-items: baseline;
+  gap: 12px;
+  align-items: center;
   min-width: 0;
   flex: 1;
+}
+.play-tile {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.play-tile svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 .song-source {
   font-size: 14px;
   letter-spacing: var(--track-caption);
-  color: var(--accent);
+  color: var(--tone);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -531,15 +591,17 @@ a { color: inherit; text-decoration: none; }
 .colophon {
   margin: 28px -16px 0;
   padding: 22px 18px 32px;
-  border-top: 1px solid var(--rule);
+  border-top: 2px solid;
+  border-image: linear-gradient(90deg, #2f8adc, #8e71d6, #139a8e, #c65b93) 1;
 }
 .colophon-body {
   font-size: 14px;
   letter-spacing: var(--track-caption);
   color: var(--ink-80);
 }
-.colophon-body .accent {
-  color: var(--ink);
+.colophon-body .accent { font-weight: 600; }
+#visitor-count {
+  color: var(--tone-travel);
   font-weight: 600;
 }
 .colophon-foot {
@@ -580,11 +642,7 @@ a { color: inherit; text-decoration: none; }
   from { opacity: 0; translate: 0 8px; }
 }
 @keyframes icon-glow {
-  from, 35% {
-    color: var(--accent);
-    border-color: var(--accent-line);
-    background-color: var(--accent-tint);
-  }
+  from, 35% { filter: brightness(1.35); }
 }
 @keyframes ping {
   from { transform: scale(1); opacity: 0.6; }
@@ -606,7 +664,7 @@ a { color: inherit; text-decoration: none; }
 
   /* J-Hawk에 빛이 한 번 지나감 (진입 직후 1회) */
   .hero-title .accent {
-    background: linear-gradient(100deg, var(--accent) 0 40%, #cfe6ff 50%, var(--accent) 60% 100%) 100% 0 / 300% 100%;
+    background: linear-gradient(100deg, transparent 42%, rgba(255, 255, 255, 0.85) 50%, transparent 58%) 100% 0 / 300% 100%, var(--brand);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -621,24 +679,21 @@ a { color: inherit; text-decoration: none; }
 
   .motion :is(.section-head, .project-row, .timeline-card, .songs):not(.in) { opacity: 0; }
   .in { animation: rise 0.4s ease-out backwards; }
-  /* 터치 기기: 카드가 처음 나타날 때 아이콘만 1회 파랗게 켜졌다 돌아감 */
+  /* 터치 기기: 카드가 처음 나타날 때 아이콘만 1회 밝게 켜졌다 돌아감 */
   @media (hover: none) {
     .project-row.in .proj-icon { animation: icon-glow 1.2s ease-out backwards; animation-delay: inherit; }
   }
 
-  /* 기존 회색 선 위에 그린 길이(--draw)만큼 밝은 선을 겹침 */
-  .motion .timeline-draw::before {
-    background: linear-gradient(var(--muted) 0 0) top / 100% var(--draw, 0px) no-repeat var(--rule);
-  }
+  /* 기존 회색 선 위에 그린 길이(--draw)만큼 색 선을 드러냄 */
+  .motion .timeline-draw::after { clip-path: inset(0 0 calc(100% - var(--draw, 0px))); }
   .motion .timeline-draw .t-dot { transition: background-color 0.25s ease; }
-  .motion .timeline-draw .t-row-current:not(.lit) .t-dot { background: var(--dot); }
-  .motion .timeline-draw .t-row.lit:not(.t-row-current) .t-dot { background: var(--muted); }
+  .motion .timeline-draw .t-row:not(.lit) .t-dot { background: var(--dot); }
   .t-row-current.lit .t-dot::after {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--tone);
     animation: ping 0.7s ease-out both;
   }
 }

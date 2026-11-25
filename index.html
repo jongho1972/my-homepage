@@ -15,7 +15,7 @@
     }
   </script>
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" rel="stylesheet">
-  <link href="index.css?v=20261125" rel="stylesheet">
+  <link href="index.css?v=20261125c" rel="stylesheet">
   <link href="favicon.svg" rel="icon" type="image/svg+xml">
   <link href="jh.jpg" rel="icon" type="image/jpeg" sizes="any">
   <link rel="preconnect" href="https://gc.zgo.at" crossorigin>
@@ -60,15 +60,24 @@
     </section>
 
     <!-- Projects -->
-    <div class="section-head">
+    <div class="section-head cat-data">
       <div>
         <div class="eyebrow">프로젝트</div>
         <h2 class="section-title">Claude Code로 만든 서비스</h2>
       </div>
     </div>
+    <!-- 아이콘: Lucide (https://lucide.dev)
+         ISC License. Copyright (c) 2026 Lucide Icons and Contributors
+         Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby
+         granted, provided that the above copyright notice and this permission notice appear in all copies.
+         THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING
+         ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL,
+         DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+         WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+         USE OR PERFORMANCE OF THIS SOFTWARE. -->
     <section class="project-list">
-      <a class="card project-row project-row-live" href="https://etf.jhawk.kr">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+      <a class="card project-row project-row-live cat-data" href="https://etf.jhawk.kr">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7c2 0 2 3 4 3c2.5 0 4.5-5 5-7"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">01</span><span class="proj-tag">MONEY</span></span>
           <span class="proj-title">ETF 투자 가이드<span class="proj-live" aria-label="라이브"></span></span>
@@ -76,8 +85,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://opendata-jhawk.netlify.app/">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M7 17v-6"/><path d="M12 17V6"/><path d="M17 17v-9"/></svg></span>
+      <a class="card project-row project-row-live cat-data" href="https://opendata-jhawk.netlify.app/">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16v5m4-6.361V21m4-10.344V21m2-18l-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15m2 3.463V21m4-6.344V21"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">02</span><span class="proj-tag">DATA</span></span>
           <span class="proj-title">공개 데이터 활용 사례<span class="proj-live" aria-label="라이브"></span></span>
@@ -85,8 +94,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://lottery.jhawk.kr/">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.1" fill="currentColor"/><circle cx="12" cy="12" r="1.1" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.1" fill="currentColor"/></svg></span>
+      <a class="card project-row project-row-live cat-luck" href="https://lottery.jhawk.kr/">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14l3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6M6 18h.01M10 14h.01M15 6h.01M18 9h.01"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">03</span><span class="proj-tag">LOTTERY</span></span>
           <span class="proj-title">통계 기반 복권번호 생성기<span class="proj-live" aria-label="라이브"></span></span>
@@ -94,8 +103,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://fortune.jhawk.kr/">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>
+      <a class="card project-row project-row-live cat-luck" href="https://fortune.jhawk.kr/">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 5h4m-2-2v4m.985 5.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">04</span><span class="proj-tag">FORTUNE</span></span>
           <span class="proj-title">AI 사주팔자<span class="proj-live" aria-label="라이브"></span></span>
@@ -103,8 +112,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://sonkum.jhawk.kr/">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-6-2.3l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15"/></svg></span>
+      <a class="card project-row project-row-live cat-luck" href="https://sonkum.jhawk.kr/">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2m0 4V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2m0 4.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">05</span><span class="proj-tag">PALMISTRY</span></span>
           <span class="proj-title">AI 손금풀이<span class="proj-live" aria-label="라이브"></span></span>
@@ -112,8 +121,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://tour-ktx-jhawk.netlify.app">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><path d="M9 3v8"/><path d="M15 3v8"/><circle cx="9" cy="14" r="0.6"/><circle cx="15" cy="14" r="0.6"/><path d="M8 17l-2 4"/><path d="M16 17l2 4"/></svg></span>
+      <a class="card project-row project-row-live cat-travel" href="https://tour-ktx-jhawk.netlify.app">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1M9 15l-1-1m7 1l1-1"/><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Zm-1 0l-2 3m10-3l2 3"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">06</span><span class="proj-tag">TRAVEL</span></span>
           <span class="proj-title">KTX 뚜벅이 여행지<span class="proj-live" aria-label="라이브"></span></span>
@@ -121,8 +130,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://tour-jeolla-jhawk.netlify.app">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg></span>
+      <a class="card project-row project-row-live cat-travel" href="https://tour-jeolla-jhawk.netlify.app">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 9.728V16m4-6.272V16m4 4V4m4 7l-4-4A7.5 7.5 0 0 1 6 7l-4 4m20 5H2m4 4V4"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">07</span><span class="proj-tag">TRAVEL</span></span>
           <span class="proj-title">호남 서남해안 여행 추천 코스<span class="proj-live" aria-label="라이브"></span></span>
@@ -130,8 +139,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://tour-matsuyama-jhawk.netlify.app">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+      <a class="card project-row project-row-live cat-travel" href="https://tour-matsuyama-jhawk.netlify.app">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 5V3m4 2V3m1 18v-3a3 3 0 0 0-6 0v3m9-18v8m0-6H6m16 6H2"/><path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9m4-6v8"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">08</span><span class="proj-tag">TRAVEL</span></span>
           <span class="proj-title">일본 마쓰야마 여행 추천 코스<span class="proj-live" aria-label="라이브"></span></span>
@@ -139,8 +148,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://tour-europe-jhawk.netlify.app">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span>
+      <a class="card project-row project-row-live cat-travel" href="https://tour-europe-jhawk.netlify.app">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 9h4m-2-2v5m2 9v-3a2 2 0 0 0-4 0v3"/><path d="m18 9l3.52 2.147a1 1 0 0 1 .48.854V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6.999a1 1 0 0 1 .48-.854L6 9"/><path d="M6 21V7a1 1 0 0 1 .376-.782l5-3.999a1 1 0 0 1 1.249.001l5 4A1 1 0 0 1 18 7v14"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">09</span><span class="proj-tag">TRAVEL</span></span>
           <span class="proj-title">동유럽 여행 추천 코스<span class="proj-live" aria-label="라이브"></span></span>
@@ -148,8 +157,8 @@
         </span>
         <span class="proj-tail" aria-hidden="true"><span class="proj-cta">OPEN</span><span class="proj-chev">›</span></span>
       </a>
-      <a class="card project-row project-row-live" href="https://edm-jahwk.netlify.app">
-        <span class="proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></span>
+      <a class="card project-row project-row-live cat-music" href="https://edm-jahwk.netlify.app">
+        <span class="tile proj-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M6 12c0-1.7.7-3.2 1.8-4.2"/><circle cx="12" cy="12" r="2"/><path d="M18 12c0 1.7-.7 3.2-1.8 4.2"/></svg></span>
         <span class="proj-body">
           <span class="proj-meta"><span class="proj-idx">10</span><span class="proj-tag">MUSIC</span></span>
           <span class="proj-title">EDM DJ Console<span class="proj-live" aria-label="라이브"></span></span>
@@ -160,7 +169,7 @@
     </section>
 
     <!-- History -->
-    <div class="section-head">
+    <div class="section-head cat-travel">
       <div>
         <div class="eyebrow">이력</div>
         <h2 class="section-title">거쳐온 길</h2>
@@ -169,13 +178,13 @@
     </div>
     <section class="card timeline-card">
       <ol class="timeline timeline-draw">
-        <li class="t-row">
+        <li class="t-row cat-luck">
           <span class="t-dot"></span>
           <div class="t-range">1991.03 — 1997.02</div>
           <div class="t-org">성균관대학교</div>
           <div class="t-role"><a class="t-role-doc" href="transcript-skku-bachelor.pdf?v=20260523c" aria-label="사회학과 학사 성적증명서 PDF">사회학과 (학사)</a></div>
         </li>
-        <li class="t-row">
+        <li class="t-row cat-luck">
           <span class="t-dot"></span>
           <div class="t-range">1997.03 — 1999.08</div>
           <div class="t-org">성균관대학교 대학원</div>
@@ -187,25 +196,25 @@
             </a>
           </div>
         </li>
-        <li class="t-row">
+        <li class="t-row cat-travel">
           <span class="t-dot"></span>
           <div class="t-range">1999.08 — 2000.07</div>
           <div class="t-org">현대리서치</div>
           <div class="t-role">사회여론조사팀</div>
         </li>
-        <li class="t-row">
+        <li class="t-row cat-travel">
           <span class="t-dot"></span>
           <div class="t-range">2000.07 — 2001.05</div>
           <div class="t-org">중앙리서치</div>
           <div class="t-role">마케팅리서치팀</div>
         </li>
-        <li class="t-row">
+        <li class="t-row cat-travel">
           <span class="t-dot"></span>
           <div class="t-range">2001.05 — 2003.02</div>
           <div class="t-org">AC닐슨 Korea</div>
           <div class="t-role">미디어사업본부</div>
         </li>
-        <li class="t-row">
+        <li class="t-row cat-music">
           <span class="t-dot"></span>
           <div class="t-range">2003.03 — 2012.08</div>
           <div class="t-org">LG유플러스 <span class="t-org-note">(구 LG텔레콤)</span></div>
@@ -215,7 +224,7 @@
             <li>고객분석팀</li>
           </ul>
         </li>
-        <li class="t-row t-row-current">
+        <li class="t-row cat-data t-row-current">
           <span class="t-dot"></span>
           <div class="t-range">2012.09 — 현재</div>
           <div class="t-org">호텔신라</div>
@@ -233,7 +242,7 @@
     </section>
 
     <!-- Certifications -->
-    <div class="section-head">
+    <div class="section-head cat-gold">
       <div>
         <div class="eyebrow">자격</div>
         <h2 class="section-title">국가전문자격증</h2>
@@ -241,9 +250,9 @@
       <span class="eyebrow">Q-NET</span>
     </div>
     <section class="card timeline-card">
-      <ol class="timeline">
-        <li class="t-row t-row-current">
-          <span class="t-dot"></span>
+      <ol class="timeline cert-list">
+        <li class="t-row cat-gold">
+          <span class="tile cert-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15.477 12.89l1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></span>
           <div class="t-range">2022.11.23</div>
           <div class="t-org">
             <a class="t-role-link t-org-link" href="https://www.q-net.or.kr/crf005.do?id=crf00503&amp;gSite=L&amp;gId=73&amp;gbnn=gbnSubtab2" aria-label="손해평가사 자격증 정보">손해평가사</a>
@@ -254,23 +263,23 @@
     </section>
 
     <!-- Songs -->
-    <div class="section-head">
+    <div class="section-head cat-music">
       <div>
         <div class="eyebrow">즐겨 듣는 곡</div>
         <h2 class="section-title">좋아하는 노래</h2>
       </div>
     </div>
-    <section class="card songs">
+    <section class="card songs cat-music">
       <a class="song-row" href="https://youtu.be/x-RU-R1miU0?si=i5Y1Sz-QhCpCLW6A">
-        <span class="song-meta"><span class="song-idx">01</span><span class="song-title">그건 니 생각이고</span></span>
+        <span class="song-meta"><span class="tile play-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg></span><span class="song-title">그건 니 생각이고</span></span>
         <span class="song-source">YouTube에서 듣기 ›</span>
       </a>
       <a class="song-row" href="https://www.youtube.com/watch?v=j7gmTN_MCWg">
-        <span class="song-meta"><span class="song-idx">02</span><span class="song-title">거절할 거야</span></span>
+        <span class="song-meta"><span class="tile play-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg></span><span class="song-title">거절할 거야</span></span>
         <span class="song-source">YouTube에서 듣기 ›</span>
       </a>
       <a class="song-row" href="https://www.youtube.com/watch?v=AxPlLEpt42w">
-        <span class="song-meta"><span class="song-idx">03</span><span class="song-title">할건지말건지</span></span>
+        <span class="song-meta"><span class="tile play-tile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg></span><span class="song-title">할건지말건지</span></span>
         <span class="song-source">YouTube에서 듣기 ›</span>
       </a>
     </section>
